@@ -1,0 +1,10 @@
+Additional git resources:
+
+Cheat Sheet:
+https://www.git-tower.com/blog/git-cheat-sheet
+
+Git basics:
+https://www.youtube.com/watch?v=0fKg7e37bQE
+
+Git team basics
+https://www.youtube.com/watch?v=oFYyTZwMyAg

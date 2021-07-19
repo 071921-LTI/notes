@@ -1,0 +1,23 @@
+Navigating file system:
+
+root directory: /
+user/home directory: ~
+previous directory: ..
+current directory: .
+
+Relative path: 
+Absolute path:
+
+cd: change directory
+ls: list content of the directory (-a to view hidden files)
+pwd: present working directory
+touch: create file
+cat: read file
+nano/vim: text editors to create/edit files
+cp: copy a file
+rm: remove a file(-rf to remove a directory)
+mkdir: create directory
+mv: move files/ rename files
+
+more resources/info:
+https://cheat.sh/cp

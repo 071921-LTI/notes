@@ -1,0 +1,30 @@
+Git
+	- DVCS - Distributed Version Control System
+		- VCS - Version control system
+			- tracks history of changes
+				- what
+				- who
+				- when
+		- Allows for full access locally
+			- self-contained history
+	- Version control tool used to manage source code, it can save snapshots of project on one or more branching paths
+		- Repository - files, folders, objects and branches that represent a project managed by git (managed within a .git folder)
+		- Working Directory - working area, contains active project files and folder
+		- Staging Area - Area between the Working directory and repository where the changes are added before a commit
+		- Commit - Snapshot of the staged changes from a working directory
+	
+	- Git workflow
+		- Creating/obtaining a repository
+			- git clone - obtains copy of remote repository on local device
+			- git init - initializes a repository(creates a .git folder)
+		- Adding/removing changes to/from staging area
+			- git add 
+			- git rm
+		- Creating a commit
+			- git commit -m "insightful message"
+		- Push a commit to remote server
+			- git push
+	- Git branches
+		- git branch - lists available branches
+		- git checkout -b - creates branch and moves to it
+		- git checkout - moves to a different branch

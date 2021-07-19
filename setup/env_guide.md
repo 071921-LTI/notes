@@ -105,7 +105,7 @@ In order to install Eclipse, run this command in your terminal:
 
     scoop install eclipse-jee@2020-12
 
-Eclipse for Java JEE developers provides tools to optimize the development Java applications.<br>
+Eclipse for Java JEE developers provides tools to optimize the development of Java applications.<br>
 **Note**: We will be the 2020-12 version due to some issues that sometime arise in most recent versions. <br><br>
 If your installation was successful, you should now be able to search for "Eclipse IDE for Java EE Developers" in your Windows search bar.
 

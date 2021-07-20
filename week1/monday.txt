@@ -1,0 +1,104 @@
+Java
+	- Object Based Programming language (OOP)
+		- multi paradigm language (meaning, it supports other programming paradigms ie: functional programming)
+	- Oracle/ mature language
+		- Wildly supported
+		- lot of documentation
+		- lot of resources
+			- StackOverflow
+			- Tutorials
+	- Compiled language
+		- Compile time error checking
+		- Optimization
+			- Highlevel Java code to bytecode to be executed
+	- Portable/Platform independent
+		- WORA - write once run anywhere
+			- Due to JVM
+	- Supports multithreading
+		- run processes concurently
+	- automatic garbage collection
+		- no need to manually allocate and deallocate memory
+			- garbage collector
+	- Strictly typed
+
+JDK/JRE/JVM
+	- JDK: Java Development Kit
+		- Provides an environment to develop and execute a Java program
+		- Contains the compiler, tools for development
+		- Contains the JRE and JVM
+	- JRE: Java Runtime Environment
+		- All that's needed to RUN an application
+		- Contains core Java libraries
+		- Contains JVM
+	- JVM: Java Virtual Machine
+		- Takes the COMPILED code (Bytecode) and executes it from the main method
+		- Different OS have different implementations
+	- Compilation process:
+		- Highlevel code (Java source code) => javac [.java file] => Bytecode (intermediary language) (.class file)
+	- Running java:
+		- Bytecode (intermediary language) (.class file) => java [.class fileName]
+			- can pass in arguments:
+				java [name] [args separated by spaces]
+
+Variables
+	- used to store data
+	- have 2 types of variables: primitive and reference types
+		- primitives: (stored in the stack)
+			- whole numbers: byte, short, int, long
+			- floating points: float, double
+			- characters: char
+			- boolean
+		- reference types: (reference an object stored in the heap)
+			- Objects
+				- Wrapper classes
+					- way to treat primitives like objects
+						- Autoboxing: Automatic conversion of a primitive into its wrapper class
+						- AutoUnboxing: Automatic conversion of a wrapper class into its primitive
+				- Strings
+				- Arrays
+
+Class
+	- Blueprints for objects, they define states and behaviors
+		- states refer to fields
+		- behaviors refer to methods
+		- objects can be instantiated using the new keyword which calls the constructor
+	- Contructors
+		- type of methods that have no return types and are used to create an instance of a class
+		- called using the "new" keyword
+		- default constructor: constructor provided by the compiler if no constructors are declared
+		- no-args constructor: constructor with no parameter
+		- parameterized/overloaded: constructors with parameters
+
+Arrays
+	- linear contiguous containers of a same datatype
+		- can either be primitives or reference types
+		- contiguous blocks in memory
+			- of a fixed size
+		- Elements in an array can be accessed via indexes
+			- starts at 0
+
+Methods
+	- reusable block of code that can take in arguments and can return something
+		- void: no return type
+		- return dataType;
+	- main method
+		- entrypoint of JVM
+		- public static void main(String[] args)
+	- calling methods
+		- static method call: ClassName.methodName();
+		- non-static method call: objectVarName.methodName();
+
+Scopes of a variable
+	- do not confuse this with access modifiers 
+	- lifetime of a variable
+	- static/class scope
+		- variables live throughout the lifetime of an application
+	- instance/object scope
+		- variable lives throught the lifetime of an object
+		- begins once object is instantiated and ends when the object is garbage collected
+	- method scope
+		- variable lives within the scope of a method
+		- includes parameters and variables declared within that scope
+	- loop/block scope
+		- variable exist only during the execution of a block
+		- variable declared within a loop/conditional statement

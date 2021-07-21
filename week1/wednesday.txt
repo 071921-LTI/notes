@@ -1,0 +1,179 @@
+Java Memory Management
+	- Stack/Heap
+		- Stack
+			- Datastructure that follows a LIFO pattern (Last In First Out)
+			- primitives and reference variables
+			- one stack per thread
+			- Variables "pop" off once the scope is over
+			- Naturally managed
+		- Heap
+			- Object storage
+				- Almost anything that's not a primitive is an object
+			- String pool 
+				- for String literals
+			- shared by all threads
+			- managed by the garbage collector
+	- Pass by Value
+		- Java is a pass by value language, which means that passing a variable into a method uses the value itself rather than the variable passed in
+		- Passing a reference variable passes the reference value to the location in the heap, as such changes made to the object are persisted
+
+	Garbage collection
+		- free up memory/resources once it's no longer reference
+		- Garbage collector is a daemon thread
+			- thread running in the background
+			- removes objects without references in the heap
+				- finalize() - last method called upon an object before it is garbage collected
+					- people don't really use this anymore
+			- Garbage collection cannot be forced, but can be suggested using System.gc();
+
+Packages
+	- folder/structure
+		- allows to resolve naming-conflicts
+		- define access
+			- how classes can access one another (access modifiers)
+	- group items based on what they do/logical structure
+	- packages are declared at the top of a class
+		- reverse URL format/reverse domain name
+			- com.revature
+	- packages are organized based on what problem they solve
+		- separation of concern, ie:
+			- a package to hold all models/entities
+			- a package to hold all classes related to data access/storage/interacting with a database
+			- a package to hold all classes related to business logic (services)
+			- a package to hold all classes related to interacting with the web
+
+Strings
+	- reference type, array of characters
+	- immutable - cannot be changed, value of a string stays the same
+	- Strings are usually stored in the String pool (within the heap)
+		- this allows Java to reuse the same string for repeated strings
+	- String s = new String("Some String"); -> created in the heap
+	- String s = "Some String"; ->created in the string pool
+	- .intern() - checks if a String is already in the stringpool and if it exists returns a reference to it, if not creates one and returns that reference
+
+StringBuilder/StringBuffer
+	- mutable alternatives to Strings with methods that allow for manipulation (append, replace, ... )
+	- StringBuilder - not threadsafe - faster
+	- StringBuffer - threadsafe - slower
+
+Scanner
+	- Class in java that can be using to "scan" through several things
+		- files, consolue inputs, input streams
+	- can parse inputs for different types, read entire lines/partial lines...
+	- Recommendation: use 1 scanner per input stream (System.in), can get wonky otherwise
+	- Good practice: close resources when no longer needed, close your scanner
+
+OOP
+	- Programming paradigm which relies on classes and objects to model real world objects
+	- 4 pillars of OOP
+		- Encapsulation
+		- Inheritance
+		- Polymorphism
+		- Abstraction
+
+Class
+	- Blueprint for object, define their states and behaviors
+	- Members of a class
+		- variables and methods of that class
+			- Object/Instance specific
+				- Instance variables
+				- Instance methods
+			- Class/ don't belong to a specific object
+				- Static variables
+				- Static methods
+
+Object
+	- Instance of a class
+		- can be created using the "new" keyword
+			- ClassName varName = new ClassName();
+	- Beware the Object class
+		- Parent of all classes
+
+Encapsulation
+	- refers to the ability for an object to protect its states and its behaviors
+	- can achieved by defining the accessibility of class members using access modifiers
+		- set a variable to private
+	- using setters and getters to retrieve/change states of an object
+
+Access modifiers
+	- specify which classes have access to an entity (class, method, field...)
+		- public - least restrictive, all the classes within the application have access
+		- protected - all of the classes within the same package and all of the subclasses/children have access
+		- "default" - the 'default' keyword is used for a different purpose, default access modifier is illustrated by not having one, all the classes within that package have access 
+		- private - the most restrictive, only the class itself has access
+
+Inheritance
+	- when subclasses/children classes adopt states and behaviors from a super/parent class
+	- deriving classes allows for code reusability and more efficient development
+		- DRY - Do not repeat yourself - principle
+	- keyword "extends
+	- by default/implicitely every class extends the Object class
+		- As a result all of the classes inherit methods from the object class (toString(), equals(), hashcode()...)
+	- by default the first line of every constructor is a call the the parent's constructor: super()
+	- Java does not support multiple inheritance
+
+this/super
+	- this - refers to the instance
+	- super - refers to the parent class
+
+Polymorphism
+	- refers to the ability of objects and methods to adapt their behaviors in different contexts
+	- can occur at compile time or at runtime
+	- method overloading
+		- creating multiple methods in the same class with the same method name but with different number and/or type of parameters
+		- compile time/static polymorphism
+	- method overriding
+		- write a method in a subclass with the same method signature as the parent class but different implementation
+		- ie: overriding the toString() method
+		- considered runtime polymorphism
+	- covariance return types
+		- when overriding a method there is the option to change the return type
+			- as long as the return type is a child/subtype of the original type
+			- can also change access to provide more than the overriden method
+	- upcasting/downcasting
+		- Upcasting refers to instantiating/assigning a child by declaring it's parent's reference type
+			- ie: Animal a = new Human();
+			- This restricts the methods available to the methods declared in the parent's class, but when a method is called the child's implementation is executed
+		- Downcasting refers to instantiating/ assigning an object by declaring its child class reference type
+			- ie: Human h = (Human) (new Animal()); - requires explicit cast
+			- leads to issues 
+
+Abstraction
+	- a way to hide complex implementation behind a simple interface
+		- using methods without actually knowing how it's implemented
+	- in Java, abstraction is used via abstract keyword and interfaces
+	- "abstract" keyword
+		- can be found in front of a class
+			- public abstract class ClassName { }
+			- cannot be instantiated
+				- cannot create an object of an abstract class
+				- like a template that can have parts left to be implemented
+					- usually to push user to use more specific CONCRETE classes
+				- can be inherited 
+				- can have abstract methods
+					- Concrete classes cannot have abstract methods
+					- Abstract class can have no abstract methods
+		- can be found in front of a method
+			- method without a body
+				- method is left to be implemented later
+				- accessMod abstract returnType nameOfMethod();
+					- cannot be private
+		- cannot be in front of a variable
+	- interface
+		- declares behavior(s) for classes to implement
+			- contract like
+		- convention for declaring interface is to end the name with "-able"
+		- methods are implicitely abstract
+		- can have variables
+			- must be public static final (cannot be changed)
+				- implicit if not typed explicitely
+		- a class can implement as many interfaces as needed
+		- In Java 8 the 'default' keyword was introduced to provide a default implementation if needed
+		- interfaces can EXTEND other interfaces 
+		- Types of interfaces
+			- Marker interface
+				- interface with no method
+				- mainly to provide information to compiler and JVM
+			- Functional interface
+				- interface with 1 method
+				- can use lambda expressions

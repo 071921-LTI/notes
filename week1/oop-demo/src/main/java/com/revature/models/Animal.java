@@ -12,6 +12,10 @@ public class Animal extends Object{
 		super(); //Object()
 	}
 	
+	public final void doSomething() {
+		System.out.println("The only thing I can do");
+	}
+	
 	public Animal(String species, boolean hasFeet, float weight) {
 		super();
 		this.species = species;

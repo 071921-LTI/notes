@@ -1,0 +1,68 @@
+Non-access modifiers
+	- abstract
+	- default
+		- allows to prvide a method implementation in an interface
+	- static
+		- in front of a field
+			- associated with the class rather than an instance
+			- can be called using the classname
+			- shared by all instances
+		- in front of a method
+			- associated with the class rather than an instance
+			- can be called using the classname
+	- final
+		- in front of a class
+			- indicates that the class cannot be extended
+		- in front of a field
+			- indicates that a variable/field cannot be reassigned once initialized
+		- in front of a method
+			- indicates that a method cannot be overriden
+	- synchronized - has to do with threads
+		- only one thread can access a resource at a time
+
+Exceptions
+	- represent a condition that prevents a method from completing successfully
+	- Object created from the exception class and its subclasses
+	- Inherits from the Throwable class
+	- Divided into Checked/Unchecked exceptions
+		- Checked exceptions are checked by the compiler
+			- "compile-time exceptions", cannot compile code until handled
+			- Exception and its subclasses but not inheriting from RuntimeException
+			- Arises from circumstances outside of the programmer's control
+				- ie: filenotfoundexception, classnotfoundexception
+		- Unchecked/Runtime exceptions, these are not accounted by compiler
+			- subclasses of runtime exception
+			- arise from coding erros/ can usually be prevented
+				- ArrayIndexOutOfBOundsException, Arithmetic...
+Errors
+	- extends from Throwable (class)
+	- Identify internal errors that cannot be recovered from
+		- bad practice to catch those
+	- ie: StackOverFlowError, NoClassDefFoundError...
+
+Exception Handling
+	- Try block
+		- used to encapsulate any statements that may throw an exception
+	- Catch block
+		- Exception handler, specify what logic/behavior is to be executed if an exception is caught
+		- catch (ExceptionType1 | ExceptionType2 e){
+			}
+			- can catch multiple types, but should be siblings on the hierarchy
+		- can have multiple catch blocks
+			- most specific to least specific exception type
+				- otherwise most generic exception will catch all
+	- Finally block
+		- executes regardless of the outcome 
+			- whether exception is thrown or not
+		- way to skip finally
+			- use System.exit(0);
+		- used to close resources
+	- throws
+		- use in method signature "throws"
+		- if there is not enough information to handle an exception properly at the time it's thrown
+			- lets Java know the exception will be handled by the called method
+	- try with resources
+		- allows a resource to be closed without needing a finally block
+		- resource must implement autoclosable interface
+Throwing Exceptions
+	- throw new Exception();

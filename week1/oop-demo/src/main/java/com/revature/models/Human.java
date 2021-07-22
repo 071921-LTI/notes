@@ -4,9 +4,11 @@ import com.revature.interfaces.Flyable;
 
 public class Human extends Animal implements Flyable {
 	private String name;
-
+	private final String finalVar;
+	
 	public Human() {
 		super(); // Animal()
+		this.finalVar = "";
 	}
 	
 	// Indicates that a method was overriden
@@ -30,4 +32,8 @@ public class Human extends Animal implements Flyable {
 		
 	}
 	
+	// cannot override a final method
+//	public final void doSomething() {
+//		System.out.println("hi");
+//	}
 }

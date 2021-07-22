@@ -24,7 +24,7 @@ public class Car implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	
 	private double maxSpeed;
 	private Float price;
 	private String make;

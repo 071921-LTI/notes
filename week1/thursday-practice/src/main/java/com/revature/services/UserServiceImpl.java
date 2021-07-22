@@ -11,7 +11,8 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public boolean addUser(User user) {
-		return false;
+		//Maybe have some additional business logic here
+		return ud.addUser(user);
 	}
 
 	@Override

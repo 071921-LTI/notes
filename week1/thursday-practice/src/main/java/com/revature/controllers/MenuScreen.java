@@ -48,8 +48,20 @@ public class MenuScreen {
 			}
 			break;
 		case "2":
+			// Do stuff here
+			System.out.println("Enter a username:");
+			String usernameNew = sc.nextLine();
+			// Ideally do some validation to check that username doesn't exist
+			System.out.println("Enter password:");
+			String passwordNew = sc.nextLine();
+			if(us.addUser(new User(usernameNew, passwordNew))) {
+				System.out.println("Register successful!");
+			}else {
+				System.out.println("Unable to accomplish operation.");
+			}
 			break;
 			default:
+				System.out.println("Invalid input");
 		}
 		} while(!input.equals("3"));
 	}

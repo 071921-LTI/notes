@@ -28,8 +28,7 @@ public class UserCollection implements UserDao{
 
 	@Override
 	public boolean addUser(User user) {
-		// TODO Auto-generated method stub
-		return false;
+		return users.add(user);
 	}
 	
 	

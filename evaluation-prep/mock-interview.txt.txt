@@ -1,0 +1,53 @@
+Interview Prep - Peer Review
+
+Guidelines
+- Meet with at two of your batchmates.
+	- 1 interviewer
+		- The interviewer's responsibility is to ask 3-4 questions to the interviewee from different sections of the curriculum (+ 1 softskill question)
+			- An interview focus can be provided by the interviewee (ie Focus on Threads)
+	- 1 interviewee
+		- The interviewee's responsibility is to answer the questions to the best of their ability, if a question is unknown practice answering as you would in an interview setting
+	- 1 scribe
+		- The scribe's responsibility is to take notes of the question asked and the answer provided by the interviewee in additional to any notes relevant to softskills 
+
+Example format:
+
+	Interviewer: Name
+	Interviewee: Name
+	Scribe: Name
+
+	Question || Note ||Answered properly (1pt):
+	ie:
+	What is Java?
+	- Java is... eh *redacted*... an OOP language.
+	  Interviewee sounds unsure of his answer, curses a lot
+	  (.25/1)
+	- ...
+
+- Conduct practice interviews with one another for each of the 3 members and take turns playing each role
+- At the end of each interview review the questions asked and discuss/research as needed
+- Feel free to provide constructive criticism but do so in a professional manner
+- Once all of the interviews are completed, push the notes taken for each individual to the mickey-mouse repository.
+
+Question Structures
+Soft Skills Section (These are just examples, feel free to come up with your own)
+
+Tell me about yourself
+Tell me about your last project(you should ALWAYS include the technology stack in your explanation)
+What was your role
+Did you use a software development methodology
+What challenges did you face How did you overcome those challenges
+What is your favorite thing about ____ (technology)
+Tell me about a time that you had a disagreement with a teammate. How did you overcome this
+If you were given a new technology to learn for a project in a week, how would you tackle this
+
+Technical Section
+	- Core JavaSQL
+	- Back End Frameworks (Hibernate, Spring)
+	- Web Technologies (Servlets, HTMLCSS, JavaScript)
+	- Angular
+	- DevOps, etc. (AWS, Docker, Microservices)
+	- AgileSDLC
+	- Database Concepts (ACID, Normalization, ERDMultiplicity)
+	- Architecture (RESTHTTP, Microservices, Full-stack architecture)
+	- Framework (HibernateJPA mapping, Angular componentservice, SpringWeb controller, etc)

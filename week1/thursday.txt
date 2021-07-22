@@ -66,3 +66,64 @@ Exception Handling
 		- resource must implement autoclosable interface
 Throwing Exceptions
 	- throw new Exception();
+
+Datastructure
+	- Solution to work/interact with data
+
+Collection
+	- is an interface that is considered the "super" interface from which every collection(List, Set, Queue) comes from
+		- declares methods implemented in all concrete collection classes
+			- ie:
+				- add();
+				- remove();
+				- contains();
+				- size();
+	- Only work with objects (Wrapper classes are used to work with primitives)
+	- Collection (I) is not to be confused with the Collections (C)
+		- Collections is a class that provides util methods to work with Collection
+	- Implements Iterable/ allows for a collection to be iterated over/use an iterator
+	- List
+		- Interface extends Collection, they can hold duplicate values
+		- Concrete implementations
+			- ArrayList
+				- Dynamically sized array, in which elements can be added and removed
+				- Arraylists leverage indexes which makes them more efficient for retrieval operations
+			- LinkedList
+				- Consists of a series of nodes which store data and a reference to the next node
+				- LinkedList are better for insertion/deletion
+	- Set
+		- Interface extends Collection, they cannot hold duplicate values
+		- Concrete implementations
+			- HashSet
+				- unordered (Can't guarantee an order)
+			- TreeSet
+				- ordered
+					- follows "natural order"
+						- specify a custom order using compator/comparable
+	- Queue
+		- Interface extends Collection, follows a FIFO order (First In First Out)
+		- Concrete implementation:
+			- Priority Queues
+				- ordered by priority
+			- LinkedList
+				- implements both list and queue
+		- additional methods
+			- peek, poll...
+	- Map
+		- interface that does not extend Collection
+			- leverages key value pair system
+			- they do not implement the iterable interface so cannot use for-each loops directly on maps
+		- concrete implementations
+			- HashMap
+			- TreeMap
+Comparable
+	- functional interface
+	- compareTo method
+		- implemented by the class itself
+		- returns an integer used to define an order
+	
+Comparator
+	- functional interface
+	- compare method
+	- similar to comparable but have to use a comparator object
+	

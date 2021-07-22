@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Map;
+import java.util.Set;
 
 import com.revature.models.Animal;
 import com.revature.models.AnimalComparator;
@@ -27,11 +29,12 @@ public class Driver {
 		arrList.add(3);
 		
 		Iterator<Integer> i = arrList.iterator();
+		// hasNext method checks that there is another element in the collection, next() returns it
 		while(i.hasNext()) {
 			System.out.println(i.next());
 		}
 		
-		HashSet<Integer> hashSet = new HashSet<>();
+		Set<Integer> hashSet = new HashSet<>();
 		hashSet.add(1);
 		hashSet.add(1);
 		hashSet.add(2);
@@ -50,7 +53,7 @@ public class Driver {
 		System.out.println(ll.pop());
 		System.out.println(ll.pop());
 		
-		HashMap<Integer, String> hm = new HashMap<>();
+		Map<Integer, String> hm = new HashMap<>();
 		hm.put(1, "String");
 		hm.put(2, "World");
 		hm.put(3, "!");

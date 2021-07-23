@@ -9,6 +9,11 @@ QC survey link(Monday): [here](https://docs.google.com/forms/d/e/1FAIpQLSctgsH-_
 
 ---
 
+07/26
+- 2pm ET - QC
+
+---
+
 07/21
 - LTI meeting (10am-11am) 
 - Kevin meeting (2pm-3pm)

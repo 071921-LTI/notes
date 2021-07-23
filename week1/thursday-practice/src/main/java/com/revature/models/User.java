@@ -77,4 +77,8 @@ public class User implements Serializable{
 	public String toString() {
 		return "User [username=" + username + ", password=" + password + "]";
 	}
+	
+	public String toFileString() {
+		return username + ":" + password;
+	}
 }

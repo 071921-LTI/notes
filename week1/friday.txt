@@ -1,0 +1,56 @@
+Lambda expressions
+	- allows for compact expression of instances of single method class
+		- implements a functional interface without requiring a whole new class to do so
+			- ie: Runnable interface, run method
+	- syntax:
+		- [interfaceName] [objName] = ()-> [returnValue];
+		- [interfaceName] [objName] = ([parameters])-> [returnValue];
+		- [interfaceName] [objName] = ([parameters])->{
+
+			// code goes here
+		
+		};
+
+
+Multithreading
+	- refers to dealing with application with concurrent processes
+		- these sub-processes/path of executions are refered to as threads
+	- types of threads
+		- User threads
+			- JVM ensures their execution to completion before exiting the application
+				- ie: main method - main thread
+		- Daemon threads
+			- "optional"
+			- lower in priority
+			- run in the background
+				- ie: gc
+		- each thread gets their own stack but all share the same heap
+
+Creating and running threads
+	- extends the Thread Class
+	- implement the Runnable interface
+		- preferred way
+	- override the run() method
+		- specifies a behavior for the thread
+	- instantiate thread object and invoke start() to start a thread
+		- start() method creates a new path of execution and runs run() on it
+		- otherwise if run() is called, it is executed on the main thread
+
+States of a thread
+	- New
+		- created thread object, run() hasn't been called
+	- Runnable
+		- run() has been called and is executing
+	- Blocked
+		- waiting for another thread to be done accessing a resource on which a lock has been placed on (synchronized)
+			- synchronyzed prevents more than one thread at a time to access a resource
+	- Waiting
+		- wait()
+			- waits until notify()/notifyAll() is called
+		- join()
+			- stops the execution of a thread until another thread is done executing
+	- Timed-waiting
+		- sleep()
+			- wait a certain amount of time
+	- Terminated
+		- everything has been executed

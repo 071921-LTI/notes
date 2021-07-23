@@ -1,13 +1,13 @@
 package com.revature.services;
 
-import com.revature.daos.UserCollection;
 import com.revature.daos.UserDao;
+import com.revature.daos.UserFile;
 import com.revature.exceptions.UserNotFoundException;
 import com.revature.models.User;
 
 public class UserServiceImpl implements UserService {
 
-	private UserDao ud = new UserCollection();
+	private UserDao ud = new UserFile();
 	
 	@Override
 	public boolean addUser(User user) {

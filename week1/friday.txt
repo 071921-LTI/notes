@@ -54,3 +54,12 @@ States of a thread
 			- wait a certain amount of time
 	- Terminated
 		- everything has been executed
+
+Concurreny issues:
+	- starvation
+	- deadlock
+
+Serialization:
+	- converting the state of a Java object into a byte stream
+	- de-serialization is the other way around
+	- used to transmit objects over a network or persiste them to a file to be loaded later (ie: when the application has restarted)

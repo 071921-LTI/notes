@@ -1,0 +1,12 @@
+com\revature\daos\UserCollection.class
+com\revature\controllers\MenuScreen.class
+com\revature\daos\UserFile.class
+com\revature\services\UserServiceImpl.class
+com\revature\services\AuthServiceImpl.class
+com\revature\services\UserService.class
+com\revature\daos\UserDao.class
+com\revature\Driver.class
+com\revature\services\AuthService.class
+com\revature\exceptions\UserNotFoundException.class
+com\revature\models\User.class
+com\revature\exceptions\AuthException.class

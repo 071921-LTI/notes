@@ -63,3 +63,80 @@ Serialization:
 	- converting the state of a Java object into a byte stream
 	- de-serialization is the other way around
 	- used to transmit objects over a network or persiste them to a file to be loaded later (ie: when the application has restarted)
+
+Maven
+	- Project management tool, Build automation tool
+	- Project management tool
+		- handles our dependencies for us
+			- dependency:
+				- frameworks/libraries written by other developers to be used in your project
+					- include:
+						- groupId
+						- artifactId
+						- version
+		- https://mvnrepository.com/
+		- in pom.xml
+			- ie: 
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.7.0</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+		- stored locally in the ~/.m2 folder
+	- Build automation tool
+		- manages the lifecycle of your application
+		- goal is to create an artifact to be deployed
+			- 3 build lifecycles
+				- Clean - remove/clean previous artifacts (.jar, .war ...)
+				- Default - tests/packages you application
+					- Validate
+					- Compile
+					- Test -> tests compile code
+					- Package -> packages all of compiled code into a war/jar file
+					- Verify
+					- Install
+					- Deploy
+				- Site - documentation
+		- project structure
+			- src/main/java: where your packages/classes(...) go 
+			- src/test/java: where your tests go
+			- src/main/resources: where resources like properties for frameworks/libraries go
+			- src/test/resources: where resources for testing go
+			- pom.xml: project object model(metadata about project, properties, dependencies, build details)
+				- allows for shared project configuration across teams
+
+Testing
+	- process of checking if an application is working as intended
+	- positive testing - making sure that an application handles the correct input
+	- negative testing - making sure that an application handles an incorrect input
+	- regression testing - making sure that new features added to an application do not break previously written code
+					- making sure the tests still pass
+
+Unit testing
+	- refers to testing an individual unit of functionality
+		- methods in this case
+	- at the bottom of the testing pyramid, most abundant kind of testing
+	- JUnit framework in Java
+
+TDD (Test Driven Development)
+	- The process of writing your tests to fail first to establish the functionality of your application, then writing code to pass those tests
+		- a way to approach this
+			- write interfaces/empty methods to establish the functionality desired
+			- write your tests
+			- write code/implement methods to pass those tests
+		- benefits
+			- planning/establishing desired behavior early on
+			- easily find where the issue arises since tests are already written
+
+JUnit
+	- JUnit is a Java Unit Testing framework - I will attempt to use JUnit 5
+	- it includes a lot of annotations and classes in order to write automated unit tests
+	- it leverages "assert" methods to check for particular condition to determine if a test passes
+		- a test passes if the result obtained is the result expected
+			- ie: exception thrown might be the desired behavior
+		- https://junit.org/junit5/docs/5.0.1/api/org/junit/jupiter/api/Assertions.html
+			- docs

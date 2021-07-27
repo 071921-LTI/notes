@@ -9,6 +9,16 @@ QC survey link(Monday): [here](https://docs.google.com/forms/d/e/1FAIpQLSctgsH-_
 
 ---
 
+07/29
+- LTI sync-up (9am-9:30am)
+
+---
+
+07/28
+- Kevin meetings (1:30pm-3pm)
+
+---
+
 07/26
 - 2pm ET - QC
 

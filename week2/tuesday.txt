@@ -1,0 +1,159 @@
+Database
+	- collection of related data
+	- allows for the preservation of data past the lifetime of an application
+
+DBMS
+	- Database management systems
+	- Collection of programs used to create and maintain databases
+		- stores data in a structured format
+		- allows for concurrent use of data
+		- control who has access to the data
+		- maintain data integrity (consistency and accuracy of the data)
+		- Data back up and recovery
+	- RDBMS
+		- Relational Database Management Systems
+			-  consists of collection of tables where tables are connected and reference each other
+				- Tables contain
+					- Columns: Category of data - fields
+					- Rows: Particalar instances of data category - records (data entities)
+
+SQL
+	- Structured Query Language
+		- provides a way to interact with database entities
+	- SQL implementations
+		- different "flavors" of SQL, arising from different vendors and platforms available
+			- ie: OracleSQL, MySQL, NoSQL
+			- we'll be using PostgreSQL
+			- syntax might vary between implementations
+
+Important distinction
+	- PostgreSQL is the RDBMS
+	- DBeaver is a tool to easily visualize and interact with db entities
+
+Datase schema
+	- collection of database objects including tables, views, triggers, functions
+	- always belong to one database
+		- a database may have multiple schema
+
+PostgreSQL
+	- free and open-source
+		- supports PL/pgSQL (procedural language)
+			- allows to write functions to specify more complex operation than just SQL
+	- Datatypes - https://www.postgresql.org/docs/10/datatype-numeric.html
+		- Character types
+			- CHAR
+				- fixed-length, blank padded
+			- VARCHAR
+				- variable-length with a limit
+			- TEXT
+				- variable-length with no limit
+		- Numeric types
+			- INTEGER
+			- DECIMAL
+				- user-specified precision
+			- SMALLINT
+			- BIGINT
+		- Temporal types
+			- DATE
+				- date no time
+			- TIME
+				- time no date
+			- TIMESTAMP
+				- date and time
+		- Autoincrementing integer
+			- SERIAL
+
+SQL Sublanguages
+	- represents different types of operations to be performed on database entities
+	- for the sake of this training, there will be 5 SQL sublanguages
+		- DDL, DCL, DML, DQL, TCL
+			- DCL - Data Control Language
+				- Manages user permission/access within a database
+					- define power/access to tables/schema
+				- GRANT and REVOKE
+			- DDL - Data Definition Language
+				- Statements that are used to construct/modify/delete database/schema/role(user)/table/... and properties
+					- CREATE
+					- ALTER
+					- DROP
+					- TRUNCATE
+						- unlike drop, just removes the records from a table
+
+Constraints
+	- limit the type of data entered in tables to ensure accuracy and reliability of the data
+		- Primary key, combination of not null and unique
+		- Not null, column cannot have a null value
+		- unique, column's value needs to be unique
+			- ie: username
+		- check(condition)
+			- ensures that a condition is met
+		- references
+			- foreign key relationship
+			- identifies another record/row potentially in a different table
+
+Keys
+	- primary keys
+		- columns or combination of columns which act as a unique identifier to a record in a table
+			- composite keys
+				- combination of columns which act as the primary key
+	- foreign keys
+		- used to illustrate relationships between tables(records)
+			- referencing another record
+	- candidate keys
+		- any columns that can be used to uniquely identify a record in a table
+
+Multiplicity
+	- refers to relationships between tables
+		- one-to-one
+			- exactly one row references another row
+			- one Social Security Number per individual
+		- one-to-many/many-to-one
+			- exactly one row in a table is referenced by potentially many rows in another table
+			- ie: one employee has many tasks but each task has one employee
+		- many-to-many
+			- several rows in one table can reference several rows in another table
+			- ie: a task may have many employees and an employee may have many tasks
+			- junction table
+				- used to work with many to many relationships
+
+Domain integrity
+	- values must fall within the constraints placed on the columns
+	- make sure that the values are "correct"
+
+Referential integrity
+	- want the database to be working properly within the constraints of a foreign key relationship
+	- do not want a record to reference another record that does no exist
+		- orphaned records
+	- delete on cascade to remove references as well
+
+DML
+	- Data manipulation language
+	- statements to perform record level operations
+		- to interact with records stored in tables
+	- CRUD
+		- Create/Read/Update/Delete
+	- INSERT
+		- Create operations
+		- INSERT INTO table_name(col1_name, col2_name) VALUES (col1_value, col2_value);
+			- mockaroo to generate mock-data
+				- https://www.mockaroo.com/
+	- UPDATE
+		- UPDATE table_name SET col_name = col_value WHERE condition;
+			- if no where clause is specified, it will update every record in that table
+	- DELETE
+		- DELETE FROM table_name WHERE condition;
+			- if no where clause is specified, it will delete every record in that table
+DQL
+	- Data Query Language
+		- "sub-sub" language/ part of DML
+	- Statements to retrieve information from tables
+	- SELECT
+		- main operation when querying data and can be filtered using additional clauses
+		- Result set can be filtered using: (order matters)
+			- WHERE
+			- GROUP BY
+			- HAVING
+			- ORDER BY
+			- LIMIT
+			- OFFSET
+			

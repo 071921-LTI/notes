@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Built-By: KevinTranHuu
-Build-Jdk: 15.0.1
-Class-Path: lib/log4j-core-2.14.1.jar lib/log4j-api-2.14.1.jar
-Main-Class: com.revature.Driver
-Created-By: Maven Integration for Eclipse
-

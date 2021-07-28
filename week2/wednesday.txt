@@ -1,0 +1,37 @@
+JDBC
+	- Java Database Connectivity
+		- establish a connection between a Java application and a database
+			- dependency is database specific
+	- Important JDBC classes/interfaces:
+		- DriverManager
+			- manages the JDBC driver
+			- .getConnection()
+				- provide connection to db
+				- pass in credentials in order to connect
+					- hardcoded, file, environment variables 
+		- Connection
+			- represents the connection to the database
+			- .setAutoCommit(boolean)
+			- createStatement()
+			- commit()
+			- rollback()
+			- close()
+		- Statement
+			- represents a SQL statement
+			- executeQuery(sql)
+			- best used when no user input is required due to vulnerability to SQL injection
+		- PreparedStatement
+			- represents a SQL statement, that has been pre-processed before its execution and therefore prevents sql injection
+			- leverages set methods to parameterize the prepared statement
+				- setInt, setString...
+			- executeUpdate
+		- CallableStatement*
+			- calls a function/procedure defined in a database
+		- ResultSet
+			- result of a query
+			- next()
+			- retrieve data using .get methods
+	- SQL Injection
+		- placing malicious code into a sql statement
+			- SELECT * FROM EMPLOYEES WHERE = [userInput];
+				- input could be "1; DROP TABLE EMPLOYEES;"

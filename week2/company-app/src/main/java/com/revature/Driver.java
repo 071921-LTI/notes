@@ -1,23 +1,19 @@
 package com.revature;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.util.List;
+
+import com.revature.daos.EmployeeDao;
+import com.revature.daos.EmployeePostgres;
+import com.revature.models.Employee;
 
 public class Driver {
 
 	public static void main(String[] args) {
 		
-//		String url = "jdbc:postgresql://localhost:5432/postgres";
-		String url = "jdbc:postgresql://database-2.cllvqmegtmuc.us-east-1.rds.amazonaws.com:5432/postgres";
-		String username = "postgres";
-		String password = "p4ssw0rd";
-		
-		try (Connection con = DriverManager.getConnection(url, username, password)){
-			System.out.println(con.getMetaData().getDriverName());
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		EmployeeDao ed = new EmployeePostgres();
+		List<Employee> emps = ed.getEmployees();
+		for(Employee e : emps) {
+			System.out.println(e);
 		}
 
 	}

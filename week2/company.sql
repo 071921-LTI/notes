@@ -42,7 +42,7 @@ create table if not exists tasks(
 	empl_id INTEGER references employees(empl_id)
 );
 
-insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Goose, canada', 59473.18, 'Nurse', 'cbutlin0@shop-pro.jp', 'Ci5VBbCxajN', 1);
+insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass) values ('Goose, canada', 59473.18, 'Nurse', 'cbutlin0@shop-pro.jp', 'Ci5VBbCxajN');
 insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Black-tailed deer', 57209.07, 'Nurse ', 'dpenswick1@omniture.com', 'jathFmUDCbL', 1);
 insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Toucan, white-throated', 58426.71, 'Cost', 'kdelboux2@technorati.com', 'zsIw862u5Da', 1);
 insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Pig-tailed macaque', 57229.33, 'Human', 'fkagan3@mail.ru', 'Z4ZZ21h', 1);
@@ -52,4 +52,9 @@ insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass,
 insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Turkey, common', 50599.2, 'Environmental', 'lpales7@bravesites.com', 'VsPBQPY6b', 1);
 insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('American racer', 54606.84, 'Research', 'lshakesby8@harvard.edu', 'Dx3MrE5jW', 1);
 insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Galapagos penguin', 56111.23, 'Food Chemist', 'uvenn9@newyorker.com', 'ks5mgD', 1);
+
+select e.empl_name "Employee name", m.empl_name "Manager name"
+from employees e
+join employees m
+on e.manager_id = m.empl_id;
 

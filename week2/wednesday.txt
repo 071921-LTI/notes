@@ -35,3 +35,12 @@ JDBC
 		- placing malicious code into a sql statement
 			- SELECT * FROM EMPLOYEES WHERE = [userInput];
 				- input could be "1; DROP TABLE EMPLOYEES;"
+
+Joins
+	- way to combine rows from different tables based on some logical relationship (columns)
+	- Types of joins:
+		- inner join/join: return all the records that have matching values in both tables
+		- left (outer) join: return all records from the left table and the matched records from the right table
+		- right (outer) join: return all records from the right table and the matched records from the left table
+		- Full (outer) join: returns all records when there is a match in either the left or right table
+		- self join: join a table with itself to combine related data from the same table

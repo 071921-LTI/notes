@@ -1,0 +1,37 @@
+Scalar and aggregate functions
+	- scalar functions
+		- used on a single input to retrieve a single input
+		- length, upper, lower, round, substr
+	- aggregate functions
+		- used on a group of inputs to retrieve a single output
+		- count, avg, sum, max, min
+		- GROUP BY clause:
+			- used with aggregate functions
+			- SELECT col1, aggregateFunction(col3) FROM table GROUP BY col1;
+		- HAVING clause:
+			- used with aggregate function for more specificity
+			- SELECT col1, aggregateFunction(col3) FROM table GROUP BY col1
+				HAVING col3 = value;
+
+Normalization
+	- refers to a database design technique that reduces redundancy and ensures that the data is stored logically
+	- consists in dividing larger tables in smaller tables and linking them using relationships
+		- we're going to focus on the first 3 NFs (Normal forms)
+			- usually most databases are considered sufficiently normalized after 3 NF
+		- 1 NF
+			- each table needs a primary key
+			- tables should be comprised of atomic values
+				- values that cannot be broken down into smaller pieces 
+			- no repeated columns (columns for the same purpose)
+				- ie: color1, color2, color3...
+		- 2 NF
+			- must be 1 NF
+			- no partial dependencies
+				- removing values that only depend on one part of a composite key
+		- 3 NF
+			- must be 2 NF
+			- no transitive dependency
+				- field/column that can be determined based on other fields
+
+					Salestaff
+EmployeeId | SalesPerson | SaleOffice(street, city, state, zip) | Age | DOB | Customer1 | Customer2 | Customer3

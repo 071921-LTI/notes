@@ -44,3 +44,5 @@ Joins
 		- right (outer) join: return all records from the right table and the matched records from the left table
 		- Full (outer) join: returns all records when there is a match in either the left or right table
 		- self join: join a table with itself to combine related data from the same table
+
+		- join info: https://www.postgresql.org/docs/10/tutorial-join.html

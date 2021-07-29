@@ -45,7 +45,7 @@ create table if not exists tasks(
 insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass) values ('Goose, canada', 59473.18, 'Nurse', 'cbutlin0@shop-pro.jp', 'Ci5VBbCxajN');
 insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Black-tailed deer', 57209.07, 'Nurse ', 'dpenswick1@omniture.com', 'jathFmUDCbL', 1);
 insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Toucan, white-throated', 58426.71, 'Cost', 'kdelboux2@technorati.com', 'zsIw862u5Da', 1);
-insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Pig-tailed macaque', 57229.33, 'Human', 'fkagan3@mail.ru', 'Z4ZZ21h', 1);
+--insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Pig-tailed macaque', 57229.33, 'Human', 'fkagan3@mail.ru', 'Z4ZZ21h', 1);
 insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Ring-tailed possum', 53545.13, 'Financial', 'bguilbert4@oaic.gov.au', 'jGbgjRNegvj', 1);
 insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Fowl, helmeted guinea', 55989.76, 'Budget I', 'kgratton5@ning.com', 'gKc0bg4X4', 1);
 insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Springbuck', 53052.99, 'Health Coach II', 'eissacson6@comcast.net', 'wBY1av', 1);
@@ -58,3 +58,17 @@ from employees e
 join employees m
 on e.manager_id = m.empl_id;
 
+select e.empl_id "e.empl_id",e.empl_name "e.empl_name", e.empl_salary "e.empl_salary", e.empl_role "e.empl_role", e.empl_email "e.empl_email", e.empl_pass "e.empl_pass", 
+m.empl_name "m.empl_name", m.empl_salary "m.empl_salary", m.empl_role "m.empl_role", m.empl_email "m.empl_email", m.empl_pass "m.empl_pass", m.manager_id "m.manager_id"
+from employees e
+join employees m
+on e.manager_id = m.empl_id;
+
+select empl_id, upper(empl_name), length(empl_name) "length of name" from employees;
+
+select avg(empl_salary) from employees;
+select manager_id, avg(empl_salary) from employees group by manager_id;
+select manager_id, avg(empl_salary) from employees 
+	where length(empl_name) > 15
+	group by manager_id 
+	having manager_id > 0;

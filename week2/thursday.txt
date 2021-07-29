@@ -35,3 +35,79 @@ Normalization
 
 					Salestaff
 EmployeeId | SalesPerson | SaleOffice(street, city, state, zip) | Age | DOB | Customer1 | Customer2 | Customer3
+
+TCL: Transaction Control Language
+	- Transaction
+		- consists in combining multiple database operation into one unit of work
+		- PostgreSQL treats every SQL statement as being executed within a transaction if not specified otherwise
+	- Relevant statements
+		- BEGIN
+			- indicates the start of a transaction
+			- if a begin is not used, one is implicitely provided
+			- transaction block
+				- statement(s) that can be found between a BEGIN and a COMMIT
+		- SAVEPOINT
+			- saves the current state of the db at that point
+		- ROLLBACK [Savepoint]
+			- revers the state of a database to a previous commit or savepoint
+		- COMMIT
+			- save/persist changes to a database
+	- Properties of a transaction - ACID
+		- Atomicity
+			- one unit, transaction is completed as whole, or not at all
+		- Consistency
+			- database should be in a valid state before/after the transaction
+				- valid in regards to db contraints
+				- valid in regards to business logic
+		- Isolation
+			- One transaction shouldn't interfere with another
+			- results of transactions executing concurrently should be the same as if they occured subsequently
+		- Durability
+			- Commits are final and changes are persisted to the database
+	- Transaction Isolation Levels
+		- Read uncommited
+			- able to read/interact with uncommited data
+		- Read commited
+			- only being able to interact with committed data
+		- Repeatable read
+			- only seeing data commited before the transaction began
+		- Serializable
+			- Strictest isolation level
+			- as if transaction occured sequentially
+	- Read phenomena
+		- Dirty read
+			- transaction reads data written by a concurrent uncommited transaction
+		- Non repeatable read
+			- a transaction re-reads data it has previously read and finds that the data has been modified by another transaction
+		- Phantom read
+			- transacction re-executes a query and returns a set of rows and finds out that this set has been modified by another transaction
+
+Log4J2
+	- Java Logging Framework, successor of Log4J
+	- Logging consists in capturing and persisting information regarding the state of an application
+		- making it avalaible at later time for analysis
+	- Main components
+		- Loggers
+			- responsible for recording log events and forwarding them to the appropriate appender(s)
+			- a root logger is provided by default, - getRootLogger()
+				- usually class specific loggers are preferred
+		- Appenders
+			- responsible for delivering the log events to their destination target
+			- formatting of the event is delegated to a layout
+		- Layouts
+			- responsible for returning a byte array to be turned into a String using the appropriate layout
+				- customize layout: https://logging.apache.org/log4j/2.x/manual/layouts.html
+	- Logging levels
+		- Trace
+			- debug message, used to capture flow through out the application
+				- identifying a specific part for debugging
+		- Debug
+			- identify general debuggin event/ info helpful to debugging
+		- Info
+			- identify general event
+		- Warning
+			- identify an event that might lead to an error
+		- Error
+			- identify an error occuring in the app, potentially recoverable
+		- Fatal
+			- identify a server error that prevents app from continuing its execution

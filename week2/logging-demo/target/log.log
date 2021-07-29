@@ -1,0 +1,13 @@
+13:12:36.390 [main] ERROR  - This an error
+13:12:36.391 [main] FATAL  - App dead
+13:13:17.950 [main] ERROR  - This an error
+13:13:17.951 [main] FATAL  - App dead
+13:18:45.249 [main] ERROR  - This an error
+13:18:45.249 [main] FATAL  - App dead
+13:18:45.250 [main] ERROR  - Exception was thrown: [Ljava.lang.StackTraceElement;@68746f22
+13:19:07.693 [main] ERROR  - This an error
+13:19:07.693 [main] FATAL  - App dead
+13:19:07.694 [main] ERROR  - Exception was thrown: [Ljava.lang.StackTraceElement;@471a9022
+13:19:57.760 [main] ERROR  - This an error
+13:19:57.761 [main] FATAL  - App dead
+13:19:57.761 [main] ERROR  - Exception was thrown: com.revature.exceptions.EvenNumberException

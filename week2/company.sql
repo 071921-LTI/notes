@@ -58,11 +58,18 @@ from employees e
 join employees m
 on e.manager_id = m.empl_id;
 
+select * from tasks;
+
 select e.empl_id "e.empl_id",e.empl_name "e.empl_name", e.empl_salary "e.empl_salary", e.empl_role "e.empl_role", e.empl_email "e.empl_email", e.empl_pass "e.empl_pass", 
 m.empl_name "m.empl_name", m.empl_salary "m.empl_salary", m.empl_role "m.empl_role", m.empl_email "m.empl_email", m.empl_pass "m.empl_pass", m.manager_id "m.manager_id"
 from employees e
 join employees m
 on e.manager_id = m.empl_id;
+
+select * 
+from tasks t
+join employees e 
+on t.empl_id =e.empl_id;
 
 select empl_id, upper(empl_name), length(empl_name) "length of name" from employees;
 
@@ -72,3 +79,21 @@ select manager_id, avg(empl_salary) from employees
 	where length(empl_name) > 15
 	group by manager_id 
 	having manager_id > 0;
+	
+select * from employees where length(empl_role)>4
+union 
+select * from employees where empl_salary > 57000;
+
+select * from employees where length(empl_role)>4
+union all
+select * from employees where empl_salary > 57000;
+
+select * from employees where length(empl_role)>4
+intersect
+select * from employees where empl_salary > 57300;
+
+select * from employees where length(empl_role)>4
+except
+select * from employees where empl_salary > 57300;
+
+explain analyze verbose select * from employees;

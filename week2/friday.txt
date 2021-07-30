@@ -1,0 +1,56 @@
+Factory Design Pattern
+	- used to return/create an implementation of a specified interface\
+	- used when the specific implementation does not matter/depends on conditions from the calling class
+	- enforces abstraction/coding to an interface
+
+Singleton Design Pattern
+	- used to ensure that there is only one instantiation of class
+		- ie: for heavy resources
+	- enforced using several conditions
+		- private constructor: can't create an instance outside of the class
+		- private static instance of the singleton class: static enforces that there is only one since it's associated with the class
+		- public static synchronized accessor method: used to retrieve an instance of the singleton
+
+Set operations (union)
+	- operations used to combine queries
+		- vs joins are used to combine tables together
+		- combine the rows of different result sets
+	- UNION
+		- combine Select query results with no duplicates
+	- UNION ALL
+		- combine Select query results with duplicates
+			- faster, because not filtering out dups
+	- INTERSECT
+		- returns common records from both data sets
+	- EXCEPT
+		- returns a dataset where the second results are removed from the first
+
+Query optimization
+	- refers to improving the ways for a SQL statement to access the requested data
+		- ie: improving execution time
+	- Query plan
+		- refers to execution plan for a SQL statement
+			- generated once per query then reused
+		- in PostgreSQL, can view the query plan using the explain statement
+			- analyze
+				- run statement and return metrics
+			- verbose
+				- displays more info
+Index
+	- provide a more efficient way to retrieve records in a database
+	- 2 types of we're going to be focusing on
+		- BTREE
+			- leverages a binary tree
+			- better for comparison operators
+		- HASH
+			- leverages hashing
+			- better for equality
+	- combining indexes is more efficient that having multiple for the same table (if multiple columns are used in the query plan)
+		- order matters
+	- insert/update/delete operations may longer due to having to update the index as well
+
+Views
+	- views are unmaterialized "view" of a query
+		- views are not "stored" in the db
+	- helpful to keep nested queries "neat" and promotes reusability
+	- harder to optimize

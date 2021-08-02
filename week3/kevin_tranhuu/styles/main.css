@@ -1,0 +1,32 @@
+html{
+    padding: 1.5%;
+    margin: 0%;
+    background-image: linear-gradient(45deg, black 0%, white 50%, black 100%);
+    min-height: 100%;
+}
+
+header{
+    text-align: center;
+    background-image: linear-gradient(45deg, rgb(0, 0, 0), rgb(161, 161, 161) );
+    color: white;
+    padding: 6%;
+    border-bottom: 2px solid black;
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: gray;
+}
+nav ul li{
+    float: left;
+    border-right: 1px solid white;
+}
+
+nav ul li a{
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    color: white;
+}

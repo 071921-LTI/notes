@@ -1,0 +1,75 @@
+Resources:
+    - https://www.w3schools.com/
+    - https://developer.mozilla.org/en-US/
+    - RevPro
+
+HTML
+    - Hypertext Mark-up Language
+        - not a programming Language
+    - Define the structure of a webpage using HTML tags
+        - tags follow a nested structure
+        - structure of html doc
+            - Doctype Declaration (optional)
+            - html
+                - head
+                    - for metadata
+                - body
+                    - information to be displayed on the webpage
+    - Elements in HTML have attributes
+        - these are used to provide more information regarding the tag
+            - global attributes
+                - present in all html tags - class, id, style
+            - local attributes
+                - href, src
+    - Semantic elements
+        - provide more meanings to tags
+            - helps with accessability
+        - nav, main, section, footer, header... instead of a bunch of divs
+    - Forms
+        - tags that can be used to submit information 
+            - can submit information without js using attributes
+                - method: specify http method
+                - action: specify url location
+        - input to capture information
+            - type to specify type of input
+            - name to specify informatio to be processed
+    - self-closing tags
+        - elements to close themselves
+            <elementName />
+    - List
+        - Ordered and unordered
+            - ol - Ordered
+            - ul - unordered
+            - li - list items
+
+CSS
+    - Cascading style sheets
+    - add looks/style to HTML
+        - HTML is the structure and CSS is the styling
+    - basic structure
+        - selector {
+            property: value;
+        }
+    - adding CSS
+        - inline 
+            - in HTML tag, via attributes
+                - <div style="property:value"></div>
+        - internally
+            - in the HTML document, in head tag
+                <style>
+                    selector {
+                       property: value;
+                    }
+                </style>
+        - externally
+            - from an external style sheets
+                - best practice because it's reusable
+            - <link rel="stylesheet" href="example.css"/>
+    - Selectors
+        - target specific element(s) to be styled
+            - tag
+            - class (.className)
+            - id (#idName) - "supposed" to be more specific than class
+        - styles apply based on specificity (most specific will overrule)
+        - most to least  id > class > tag
+    

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>DOM Manipulation</title>
+        <link rel="stylesheet" href="rev.css" />
+    </head>
+    <body>
+        <main>
+            <button type="button">Click me!</button><br>
+            <span id="hello" class="rev">Hello World!</span>
+        </main>
+        <main>
+            <span>Bubbling</span><br>
+
+            <div id="A" style="background-color:#222;color:white;padding:40px 0px 0px 40px">
+                A
+                <div id="B" style="background-color:#666;color:white;padding:40px 0px 0px 40px">
+                    B
+                    <div id="C" style="background-color:#AAA;color:white;padding:40px 0px 0px 40px">
+                        C
+                        <div id="D" style="background-color:#CCC;color:white;padding:40px 0px 0px 40px">
+                            D
+                            <div id="E" style="background-color:#EEE;color:black;padding:40px 0px 0px 40px">
+                                E
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button">Capture</button>
+        </main>
+        <main>
+            <span>Creating Elements Dynamically</span><br>
+            <button type="button">Create Table</button>
+            <div id="tableDiv"></div>
+        </main>
+        <script src="dom.js"></script>
+    </body>
+</html>

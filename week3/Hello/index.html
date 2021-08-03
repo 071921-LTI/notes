@@ -3,12 +3,19 @@
         <title>JavaScript Example</title>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="rev.css">
-        
+        <script>
+            console.log('Hello World, from the script tag!');
+        </script>
     </head>
     <body>
         <main>
             
-            <button>Click Here</button>
+            <button onclick="console.log('Hello World from the onclick attribute!')">Click Here</button>
         </main>
+        <!--
+            Best practice to add js file at the end of the HTML document
+            That ensures that all of the elements of the DOM have been loaded first
+        -->
+        <script src="hello.js"></script>
     </body>
 </html>

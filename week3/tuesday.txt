@@ -1,0 +1,100 @@
+JavaScript
+	- a scripting language used for client-side web applications
+		- can be used server side
+		- scripting language, interpreted language
+			- not a compiled language, no compilation step
+			- nowadays more modern browsers include JIT (Just in Time compilation)
+		- supported by all modern browsers
+	- ECMA, manages standard specification for JS
+		- ECMAScript - standards
+			- ES6, ES7... all of these introduce new features to JS
+	- multi-paradigmed
+		- mainly functional, but can mimick oop... 
+	- Dynamically/weakly typed
+		- variables don't have to be declared with a specific type, their type can be changed dynamically
+			- type coersion: '4' == 4 --> returns true, compares just value
+				- === -> compared type and value 
+	- semi-colon injections
+		- puts semi-colon where it feels appropriate, implicitely
+			- can lead to issues
+	- ways to include js to an HTML page
+		- between script tags
+		- externally <script src="path"></script>
+			- best practice to load scripts at the end
+	- Datatypes in js
+		- "primitives"
+			- boolean
+			- number
+			- null
+			- undefined
+			- symbol
+			- string
+		- "object"
+			- objects
+				- stored as key-value pairs
+				- very similar to JSON
+			- arrays
+				- unlike Java, arrays are dynamically sized and can include multiple datatypes
+				- QC might ask about some array functions
+			- functions
+		- Truthy vs Falsy
+			- any type in JS will evaluate to either true of false
+			- falsy values
+				- null
+				- undefined
+				- 0
+				- ''
+				- false
+				- NaN (not a number)
+	- JavaScript scopes
+		- where a declared variable is available
+		- global
+			- variable declared outside of a function scope
+			- accessible anywhere within the script
+		- function
+			- variables declared within a function block
+		- block
+			- variables declared within {}
+			- new to ES6 
+				- introduces let and const to declare variables
+				- let can be reassigned, not redeclared
+				- const cannot reassigned, nor redeclared
+	- Hoisting
+		- variables declared with var will be hoisted to the top of their scope
+			- top of global/function scope
+		- used before they are declared
+		- functions get hoisted
+
+	- closures
+		- using/returning an innerfunction to provide functionality to access a variable in an outer function
+		- mimics encapsulation
+	
+	- prototypical inheritance
+		- can declare inheritance using .prototype =
+		- can access parent's fields and behaviors using __proto__
+		- this 
+			- refers to the current scope
+				- ie: object it is used on
+
+	- Template literal
+		- declared between backticks: ``
+		- preserves newline
+		- easier than using concatenation
+			- 'some string' + someValue + '.'
+			- `some string ${someValue}.` 
+	- DOM
+		- Document Object Model
+			- tree like representation of an HTML page using JS objects
+				- notes refer to the nested HTML elements
+		- Can traverse/navigate/retrieve elements from the dom using JS methods
+			- document.getElementById
+			- document.getElementsByClassName
+			- document.getElementsByTagName
+		- Can programmatically manipulate elements using their properties
+			- .attributes
+			- .setAttributes
+			- .onclick
+			- .innerHTML
+		- Can create and append elements
+			- .createElement("") - creates an html element
+			- .appendElement("") - attaching element to appropriate location in the DOM

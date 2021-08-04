@@ -1,0 +1,75 @@
+Event Listeners
+	- listeners that wait for certain events to happen to execute some functionality
+		- onclick
+		- onmousehover
+		- onkeydown
+	- document.getElementBy... . onclick = funcName;
+		- by default the event propagation is bubbling
+	- document.getElementBy... .addEventListener(event, callback function, boolean);
+		- boolean dictates event propagation
+
+Event Propagation
+	- how event listeners handle events for elements that have a parent/children with event listeners as well
+		- 2 types
+			- bubbling: default behavior - event bubbles up from the innermost child to the outermost parent
+			- capturing: event starts from the outermost parent and moves down the innermost child element
+		- document.getElementBy... .addEventListener(event, callback function, boolean);
+			- true: capturing
+			- false(default): bubbling
+		- Event propagation can be stopped
+			- event.stopPropagation();
+
+HTTP
+	- Hypertext Tranfer Protocol
+		- transfer protocol to exchange information over the web
+	- consists of requests and responses exchanged between a client and a server
+	- plain text, HTML, JSON (JavaScript Object Notation)
+	- HTTP Request
+		- HTTP version: 1/1.1
+		- Verb
+			- HTTP methods: describes the operation to be performed
+			- 4 main ones
+				- GET - retrieve "SELECT"
+				- POST - create "INSERT"
+				- PUT - "UPDATE"
+				- DELETE - "DELETE
+		- URL
+			- resource location
+		- Header
+			- metadata about the request
+		- Body
+			- can be empty
+			- information that you might want to include
+	- HTTP Response
+		- HTTP version
+		- Header
+		- Body
+			- payload (if requesting a resource)
+		- Status codes
+			- information about status of a request
+			- 100s-500s
+				- 100 level: informational
+				- 200 level: success
+				- 300 level: redirect
+				- 400 level: client error
+				- 500 level: server error
+
+AJAX
+	- Asynchronous JS and XML
+	- library that allows to send HTTP requests and receive HTTP responses, also allows for partial page reload
+		- allows to make async calls, aka code still executes while waiting for the HTTP response
+	- 4 main steps
+		- create XMLHttpRequest object
+		- set a callback function to the ready state change even of that object
+		- parameterize/ open the request object (set type, method, url...)
+		- send the request
+	- 5 ready states
+		- 0: unsent -- xhr object has been created
+		- 1: opened -- .open() has been called/parameterize
+		- 2: headers received -- request has been sent, retrieving headers from the response
+		- 3: loading - body of response is loading
+		- 4: done -- response has been received
+	- onreadystate change callback function
+		- check that the ready state is 4 to make sure a response was retrieved
+		- check that the status code is in the 200s to make sure request was successful
+		- handle the response

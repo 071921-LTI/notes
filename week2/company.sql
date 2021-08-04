@@ -20,38 +20,44 @@ drop table employees;
 create table employees(
 	empl_id SERIAL primary key,
 	empl_name VARCHAR(50) not null,
-	empl_salary NUMERIC(6,2),
+	empl_salary NUMERIC(9,2),
 	empl_role VARCHAR(20),
 	empl_email VARCHAR(75) unique,
-	empl_pass VARCHAR(50) not null check (length(empl_pass) > 7),
-	manager_id INTEGER references employees(empl_id)
+	empl_pass VARCHAR(50) not null,
+	manager_id INTEGER references employees(empl_id) default 1
 );
 
-alter table employees 
-	alter column empl_salary set data type numeric(7,2);
+--alter table employees 
+--	alter column empl_salary set data type numeric(7,2);
 	-- add column something...
 	-- drop column something;
+
+drop table if exists tasks;
 
 create table if not exists tasks(
 	task_id SERIAL primary key,
 	task_name VARCHAR(30),
 	task_description text,
-	completion_status VARCHAR(10),
-	assign_date DATE,
+	completion_status VARCHAR(15),
+	assign_date DATE default CURRENT_DATE,
 	due_date DATE,
 	empl_id INTEGER references employees(empl_id)
 );
 
-insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass) values ('Goose, canada', 59473.18, 'Nurse', 'cbutlin0@shop-pro.jp', 'Ci5VBbCxajN');
-insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Black-tailed deer', 57209.07, 'Nurse ', 'dpenswick1@omniture.com', 'jathFmUDCbL', 1);
-insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Toucan, white-throated', 58426.71, 'Cost', 'kdelboux2@technorati.com', 'zsIw862u5Da', 1);
---insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Pig-tailed macaque', 57229.33, 'Human', 'fkagan3@mail.ru', 'Z4ZZ21h', 1);
-insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Ring-tailed possum', 53545.13, 'Financial', 'bguilbert4@oaic.gov.au', 'jGbgjRNegvj', 1);
-insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Fowl, helmeted guinea', 55989.76, 'Budget I', 'kgratton5@ning.com', 'gKc0bg4X4', 1);
-insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Springbuck', 53052.99, 'Health Coach II', 'eissacson6@comcast.net', 'wBY1av', 1);
-insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Turkey, common', 50599.2, 'Environmental', 'lpales7@bravesites.com', 'VsPBQPY6b', 1);
-insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('American racer', 54606.84, 'Research', 'lshakesby8@harvard.edu', 'Dx3MrE5jW', 1);
-insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values ('Galapagos penguin', 56111.23, 'Food Chemist', 'uvenn9@newyorker.com', 'ks5mgD', 1);
+insert into employees (empl_name, empl_salary, empl_role, empl_email, empl_pass, manager_id) values
+	('Enrollment Admin', 0, 'Enrollment Admin', 'enrollment_admin@company.com', 'password', 1),
+	('John Doe', 1000000, 'CEO', 'john.doe@company.com', 'jathFmUDCbL', 2),
+	('Jimmy Joe', 130000, 'Manager', 'jimmy.joe@company.com', 'randomPass1', 2),
+	('Timmy Tom', 55000, 'Grunt', 'timmy.tom@company.com', 'TimPass1', 3),
+	('Jackie Jack', 55000, 'Grunt', 'jackie.jack@company.com', 'JackiePass2', 3),
+	('Newbie Newb', 1000, 'TBD', 'newbie.newb@company.com', 'NewbiePass3', 1);
+	
+insert into tasks (task_name, task_description, completion_status, due_date, empl_id) values
+	('Urgent task', 'Something very urgent, please fix.', 'IN_PROGRESS', '2022-8-15', 4),
+	('Mundane task', 'Something that is pretty useless, really.', 'IN_PROGRESS', '2021-10-15', 4),
+	('Is this a task', 'Something that is questionable, at best.', 'IN_PROGRESS', '2021-11-15', 3),
+	('Manager task', 'Managers gotta keep busy', 'IN_PROGRESS', '2021-12-15', 3),
+	('New task', 'Something that is new.', 'NEW', '2022-1-01', null);
 
 select e.empl_name "Employee name", m.empl_name "Manager name"
 from employees e

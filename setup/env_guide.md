@@ -104,13 +104,15 @@ Now verify that you have installed Java properly by typing this command:
 
      java -version
 
-### Step 5: Install Spring Tool Suite 4
+### Step 5: Install Eclipse
 
-In order to install Spring Tool Suite 4, run this command in your terminal:
+In order to install Eclipse, run this command in your terminal:
 
-    scoop install sts
+    scoop install eclipse-jee@2020-12
 
-If your installation was successful, you should now be able to search for "Spring Tool Suite" in your Windows search bar.
+Eclipse for Java JEE developers provides tools to optimize the development of Java applications.<br>
+**Note**: We will be the 2020-12 version due to some issues that sometime arise in most recent versions. <br><br>
+If your installation was successful, you should now be able to search for "Eclipse IDE for Java EE Developers" in your Windows search bar.
 
 ### Step 6: Install Maven
 

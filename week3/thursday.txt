@@ -22,3 +22,53 @@ S3 (AWS)
 	- can programatically access using Amazon SDK
 	- can host static webpages
 		- https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html
+
+Tomcat (v. 8.5)
+	- webserver: in charge of processing requests and sending back responses
+	- provides a web server environment in which Java code, packaged within a web archive (.war) can run
+		- no main method
+	- Catalina
+		- Component of Tomcat
+		- Servlet container
+			- manages our servlets and their lifecycle 
+
+Servlets
+	- objects used to handle HttpServletRequest and HttpServletResponse
+	- servlets are not part of the Java standard library
+		- javax.servlets
+	- servlet hierarchy:
+		- Servlet(I)
+			- declares the lifecycle methods of a servlet
+				- init
+					- initialize the servlet, called once
+						- called when a request is made to a specific servlet that does not yet have an instance
+				- service
+					- called everytime a request is received by a specific servlet, handle the request
+				- destroy
+					- called when the servlet is no longer needed, called once
+		- Generic Servlet (AC)
+			- default implementation of init and destroy are provided
+		- HTTP Servlet (AC)
+			- declares and implements doGet/doPost/doPut/doDelete
+				- routed to from from the service method based on the HTTP verb of the request
+		- YourServletImplementation (CC)
+	- deployment descriptor (web.xml)
+		- file that defines and maps the servlets so that the web container knows where to find them and what request to map to them
+			- <servlet>
+				<servlet-name>
+				<servlet-class>
+			- <servlet-mapping>
+				<servlet-name>
+				<url-pattern>
+		- load-on-startup
+			- allows the webcontainer to instantiate a servlet before the first request is made 
+	- PrintWriter
+		- an object that is retrieved from the response object
+			- response.getWriter();
+		- can write to the body of the response using .write()
+			- send data back
+			- plain text, JSON, HTML....
+	- static webpages
+		- can return static webpages using a requestdispatcher object
+			- req.getRequestDispatcher("path/to/file.html").forward(req, res);
+			- static resources need to be located in the web-app folder

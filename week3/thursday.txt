@@ -1,0 +1,24 @@
+Fetch API
+	- an API in JS that allows to send HTTP requests and receive HTTP responses
+	- introduced in ES6
+	- fetch (URI) - get request
+	- fetch (URI, {method: 'METHOD', body: JSON.stringify(aJSObject)});
+	- can be used with async and await
+		- introduced in ES7
+		- async
+			- used to specify that a function returns a promise or is making an async call
+		- await
+			- used in an async function to make an async call
+		
+Arrow function/notation
+	- short hand syntax for writing functions
+	- declaration, parameter(s), statements
+		- var x = params => statement
+
+S3 (AWS)
+	- Simple Storage Service
+		- Highly scalable
+		- High durability and availability
+	- can programatically access using Amazon SDK
+	- can host static webpages
+		- https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html

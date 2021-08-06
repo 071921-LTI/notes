@@ -29,7 +29,7 @@ import com.revature.util.ConnectionUtil;
 @ExtendWith(MockitoExtension.class)
 public class UserTest {
 
-	private UserDao ud;
+	private UserDao ud = new UserPostgres();
 	private static MockedStatic<ConnectionUtil> mockedConnectionUtil;
 	private static Connection connection;
 
@@ -129,9 +129,9 @@ public class UserTest {
 		List<User> actual = ud.getUsers();
 		List<User> expected = new ArrayList<>();
 		
-		expected.add(new User(1, "Admin", "Enrollment Admin", "password"));
-		expected.add(new User(2, "John", "CEO", "jathFmUDCbL"));
-		expected.add(new User(3, "Jimmy", "Manager", "randomPass1"));
+		expected.add(new User(1, "Admin", "password", "Enrollment Admin"));
+		expected.add(new User(2, "John", "jathFmUDCbL", "CEO"));
+		expected.add(new User(3, "Jimmy", "randomPass1","Manager"));
 
 		assertEquals(actual, expected);
 	}

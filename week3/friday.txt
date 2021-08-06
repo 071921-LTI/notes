@@ -1,0 +1,45 @@
+Object mappers
+	- Allow for the conversion of Java Objects to JSON and back
+	- Jackson library
+
+POST requests
+	- query params vs request body
+		- query params: url?key=value
+		- requestbody:
+			- information is sent through the request body and is hidden
+		- path params: url/{input}
+
+Session management
+	- tracking user state
+		- persisting state beyond the lifecycle of an HTTPServletRequestObject
+	- Save information in the browser
+		- cookie
+		- URL rewriting/appending
+			- shouldn't have sensitive info in the url
+		- Hidden form field 
+			- can be tedious to maintain/not best way to do it
+		- HTTP Session
+			- an object that can be retrieved from HTTPServletRequest
+				- .setAttribute(key,value);
+				- .getAttribute(key);
+				- .invalidate();
+			- .getSession()
+				- return a current session or return a new one
+		- token
+			- JWT
+			- pass in the response to be sent in subsequent requests
+
+BootStrap
+	- Library of classes that can leveraged as premade templates
+		- import bootstrap in html page
+		- leverage classes in order to style elements
+	- Responsive Web Design
+		- website and web pages that automatically adapt to different screen sizes/types
+		- uses grid system to enable behavior
+
+Config/Context params
+	- parameters for servlets established in web.xml
+	- Context params: available for all servlets
+	- Config params: only available for servlets in which they were defined
+		- .getServletContext().getParam()
+		- .getServletConfig().getParam()

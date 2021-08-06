@@ -2,12 +2,15 @@ package com.revature.daos;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.h2.tools.RunScript;
 import org.junit.jupiter.api.AfterAll;
@@ -26,7 +29,7 @@ import com.revature.util.ConnectionUtil;
 @ExtendWith(MockitoExtension.class)
 public class UserTest {
 
-	private UserDao ud;
+	private UserDao ud = new UserPostgres();
 	private static MockedStatic<ConnectionUtil> mockedConnectionUtil;
 	private static Connection connection;
 
@@ -99,8 +102,52 @@ public class UserTest {
 	
 	@Test
 	public void getByIdExists() throws UserNotFoundException {
-		User actual = ud.getUserById(1);
 		User expected = new User(1, "Admin", "password", "Enrollment Admin");
-		assertEquals(actual, expected);
+		assertEquals(ud.getUserById(1), expected);
+	}
+	
+	@Test
+	public void getByIdDoesNotExists() {
+		assertThrows(UserNotFoundException.class, ()->ud.getUserById(100));
+	}
+	
+	@Test
+	public void getByUsernameExists() throws UserNotFoundException {
+		User expected = new User(2, "John", "jathFmUDCbL", "CEO");
+		assertEquals(ud.getUserByUsername("John"), expected);
+	}
+	
+	@Test
+	public void getByUsernameDoesNotExists() {
+		assertThrows(UserNotFoundException.class, ()->ud.getUserByUsername("Test"));
+	}
+	
+	@Test
+	public void addUserValid() {
+		assertEquals(ud.addUser(new User("Test", "Test", "Test")), 4);
+	}
+	
+	@Test
+	public void addUserInvalid() {
+		assertEquals(ud.addUser(new User("John", "jathFmUDCbL", "CEO")), -1);
+	}
+	
+	@Test
+	public void getUsers() {
+	List<User> users = new ArrayList<>();
+	users.add(new User(1, "Admin", "password", "Enrollment Admin"));
+	users.add(new User(2, "John", "jathFmUDCbL", "CEO"));
+	users.add(new User(3, "Jimmy", "randomPass1", "Manager"));
+		assertEquals(ud.getUsers(), users);
+	}
+	
+	@Test
+	public void deleteUserValid() throws UserNotFoundException {
+		assertEquals(ud.deleteUser(1), 1);
+	}
+	
+	@Test
+	public void deleteUserInvalid() throws UserNotFoundException {
+		assertEquals(ud.deleteUser(10), 0);
 	}
 }

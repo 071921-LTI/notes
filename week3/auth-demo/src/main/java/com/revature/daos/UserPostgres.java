@@ -102,7 +102,7 @@ public class UserPostgres implements UserDao {
 	@Override
 	public int addUser(User user) {
 		int id = -1;
-		String sql = "insert into employees (username, role, password) values (?,?,?) returning id;";
+		String sql = "insert into users (username, role, password) values (?,?,?) returning id;";
 		
 		try (Connection con = ConnectionUtil.getConnectionFromEnv()){
 			PreparedStatement ps = con.prepareStatement(sql);

@@ -36,7 +36,7 @@ public class UserServiceTest {
 
 	@Test
 	public void addUserExists() {
-		Mockito.when(ud.addUser(user)).thenReturn(null);
+		Mockito.when(ud.addUser(user)).thenReturn(0);
 		assertEquals(us.addUser(user), false);
 	}
 

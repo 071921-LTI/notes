@@ -9,8 +9,8 @@ public interface UserService {
 	// Should return true if a user was successfully added
 	boolean addUser(User user);
 	List<User> getUsers();
-	User getUserById();
-	User getUserByUsername();
+	User getUserById(int id);
+	User getUserByUsername(String username);
 	// Should return true if a user was successfully added
 	boolean deleteUser(int id);
 	

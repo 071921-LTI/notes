@@ -1,0 +1,40 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #888888;
+    background-color: #EECC99;
+}
+
+main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+button {
+    color: white;
+    background-color: #FFBB77;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+button:hover {
+    background-color: #EEAA66;
+}
+
+button:active {
+    border: 2px solid #888888;
+}
+
+main>* {
+    margin: 8px;
+}
+
+th {
+    color: #555555;
+}
+
+th, td {
+    border-bottom: 2px solid orange;
+    border-right: 2px solid orange;
+}

@@ -2,6 +2,7 @@ package com.revature.services;
 
 import java.util.List;
 
+import com.revature.exceptions.UserNotFoundException;
 import com.revature.models.User;
 
 public interface UserService {
@@ -9,9 +10,9 @@ public interface UserService {
 	// Should return true if a user was successfully added
 	boolean addUser(User user);
 	List<User> getUsers();
-	User getUserById(int id);
-	User getUserByUsername(String username);
+	User getUserById(int id) throws UserNotFoundException;
+	User getUserByUsername(String username) throws UserNotFoundException;
 	// Should return true if a user was successfully added
-	boolean deleteUser(int id);
+	boolean deleteUser(int id) throws UserNotFoundException;
 	
 }

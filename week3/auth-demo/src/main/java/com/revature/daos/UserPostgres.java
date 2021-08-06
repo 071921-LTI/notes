@@ -99,16 +99,47 @@ public class UserPostgres implements UserDao {
         return users;
     }
 
-    @Override
-    public int addUser(User user) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
+	@Override
+	public int addUser(User user) {
+		int id = -1;
+		String sql = "insert into employees (username, role, password) values (?,?,?) returning id;";
+		
+		try (Connection con = ConnectionUtil.getConnectionFromEnv()){
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, user.getUsername());
+			ps.setString(2, user.getRole());
+			ps.setString(3, user.getPassword());
 
-    @Override
-    public int deleteUser(int id) throws UserNotFoundException {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-    
+			
+			ResultSet rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				id = rs.getInt("id");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return id;
+	}
+
+
+
+	@Override
+	public int deleteUser(int id) throws UserNotFoundException {
+		String sql = "delete from users where id = ?;";
+		int rowsChanged = -1;
+		
+		try (Connection con = ConnectionUtil.getConnectionFromEnv()){
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+			
+			rowsChanged = ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rowsChanged;
+	}
+
 }

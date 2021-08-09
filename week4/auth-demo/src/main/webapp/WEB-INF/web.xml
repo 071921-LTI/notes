@@ -5,24 +5,15 @@
 	version="2.5">
 	<display-name>auth-demo</display-name>
 
+	
 	<servlet>
-		<servlet-name>user</servlet-name>
-		<servlet-class>com.revature.servlets.UserServlet</servlet-class>
-		<init-param>
-			<param-name>hello</param-name>
-			<param-value>hi</param-value>
-		</init-param>
-	</servlet>
-	<servlet>
-		<servlet-name>auth</servlet-name>
-		<servlet-class>com.revature.servlets.AuthServlet</servlet-class>
+		<servlet-name>front</servlet-name>
+		<servlet-class>com.revature.controllers.FrontController</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>auth</servlet-name>
-		<url-pattern>/auth</url-pattern>
+		<servlet-name>front</servlet-name>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>user</servlet-name>
-		<url-pattern>/users/*</url-pattern>
-	</servlet-mapping>
+	
+	
 </web-app>

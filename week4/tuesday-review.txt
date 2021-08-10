@@ -1,0 +1,16 @@
+Tuesday:
+	- WebService
+	- SOA
+	- REST
+		- REST constraints
+	- ORM
+	- JPA
+	- Hibernate
+		- Classes/Interfaces in Hibernate
+		- Configuring Hibernate
+		- DAO/CRUD methods
+			- .get() vs .load()
+			- .update() vs .merge()
+			- .save() vs .persist()
+		- LazyLoading vs EagerFetching
+			- proxy

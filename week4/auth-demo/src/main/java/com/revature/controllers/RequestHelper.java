@@ -43,6 +43,7 @@ public class RequestHelper {
 			/*
 			 * if a "/" character is present in path, split at that character and returns the first element
 			 * 	- path = "users"
+			 * 	- setting a request attribute to the second part of the url: 1
 			 */
 			if(path.indexOf("/") != -1) {
 				String[] paths = path.split("/");

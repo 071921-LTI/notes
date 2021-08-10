@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.revature.delegates.AuthDelegate;
 import com.revature.delegates.PokemonDelegate;
 import com.revature.delegates.UserDelegate;
 
@@ -13,6 +14,7 @@ public class RequestHelper {
 
 	private UserDelegate ud = new UserDelegate();
 	private PokemonDelegate pd = new PokemonDelegate();
+	private AuthDelegate ad = new AuthDelegate();
 	
 	public void process(HttpServletRequest rq, HttpServletResponse rs) throws IOException, ServletException {
 		/*
@@ -60,7 +62,9 @@ public class RequestHelper {
 				pd.process(rq, rs);
 				break;
 			case "auth":
-				// TODO: create auth delegate 
+				ad.process(rq, rs);
+				break;
+				
 			default:
 				rs.sendError(400, "Path not supported:" + path);
 			}

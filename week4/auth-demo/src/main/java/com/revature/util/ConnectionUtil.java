@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConnectionUtil {
 	
-private static Connection con;
+private static Connection conn;
 	
 	
 	public static Connection getConnectionFromEnv() throws SQLException {
@@ -18,14 +18,14 @@ private static Connection con;
 			e.printStackTrace();
 		}
 		
-		String url = System.getenv("DB_URL");
-		String username = System.getenv("DB_USER");
-		String password = System.getenv("DB_PASS");
-		
-		if(con == null || con.isClosed()) {
-			con = DriverManager.getConnection(url, username, password);
-		} 
-		
-		return con;
+        try {
+        	conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Pokemon", "postgres", "746233077");
+            }
+ 
+        catch (SQLException e) {
+            System.out.println("Connection failure.");
+            e.printStackTrace();
+        }
+        return conn;
 	}
 }

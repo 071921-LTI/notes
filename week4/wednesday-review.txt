@@ -1,0 +1,13 @@
+- Caching
+	- Types of caching
+		- L1 
+		- L2 
+- Object states in Hibernate
+	- transient
+	- persisted
+	- detached		
+- Native Queries
+- HQL
+- Criteria API
+- Named Queries
+		

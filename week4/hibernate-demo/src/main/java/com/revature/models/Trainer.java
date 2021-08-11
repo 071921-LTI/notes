@@ -5,44 +5,56 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "trainers")
+@NamedQueries({
+	@NamedQuery(name="getAllNq", query="from Trainer")
+})
 public class Trainer {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "t_id")
 	private int id;
 	@Column(nullable = false, unique = true)
 	private String name;
-	
+
 	public Trainer(String name) {
 		super();
 		this.name = name;
 	}
+
 	public Trainer() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	public Trainer(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -51,6 +63,7 @@ public class Trainer {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -69,10 +82,10 @@ public class Trainer {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "Trainer [id=" + id + ", name=" + name + "]";
 	}
-	
-	
+
 }

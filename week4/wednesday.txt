@@ -1,0 +1,45 @@
+Hibernate - cont.
+	- Caching
+		- "storing for quicker access"
+		- stores the result of a query from the db to save time
+			- "buffer memory" that lies between the app and the database
+		- Types of caching
+			- L1 - Level 1
+				- session level
+				- automatic and mandatory
+				- closing the session causes information in L1 caching to be lost
+				- if multiple updates are made onto an object
+					- Hibernate will delay the actual update as long as possible to reduce the number of statements made
+			- L2 - Level 2
+				- SessionFactory level
+					- lasts for the lifetime of an application
+				- optional
+				- needs to leverage 3rd party for caching
+					- ie: ehcache
+	- Object states in Hibernate
+		- transient
+			- object not associated with the database
+				- new Object();
+		- persisted
+			- object associated with a session and matches what is found in the database
+				- use method to persist the object
+		- detached
+			- object represented in the database but no longer associated with a session
+				- session.close()
+	- Native Queries
+		- writing plain SQL, NativeQuery<T>
+		- not best practice
+			- tight coupling with a specific SQL dialect
+	- HQL
+		- Hibernate Query Language
+		- more "OO" way to query data compared to SQL
+			- not dialect dependent
+		- paired with Query<T>
+	- Criteria API
+		-Java-based, used to query data programmatically
+			- DQL
+			- OOP "manner"
+	- Named Queries
+		- define a query to be used in the model
+		- could be used when project is not separated by layers, could be easy to find
+				

@@ -32,6 +32,11 @@ public class FrontController extends HttpServlet {
 		doGet(rq,rs);
 	}
 	
+	protected void doOptions(HttpServletRequest rq, HttpServletResponse rs) throws IOException, ServletException{
+		addCorsHeader(rq.getRequestURI() ,rs);
+		super.doOptions(rq, rs);
+	}
+	
 	public static void addCorsHeader(String requestURI, HttpServletResponse rs) {
 		rs.addHeader("Access-Control-Allow-Origin", "*");
 		rs.addHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");

@@ -1,0 +1,10 @@
+Front Controller Design Pattern
+		- handles all of the requests
+			- rather than handling each endpoint with another servlet
+		- delegates tasks to "delegates"
+		- centralized control
+			- easier to handle
+				- sessions
+				- validation
+				- logging
+		- leverages helper to break down the url and route them to the appropriate delegates

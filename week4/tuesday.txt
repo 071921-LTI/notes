@@ -1,0 +1,135 @@
+ReST
+	- Representational State Transfer
+	- used for the exchange and manipulation of resources
+		- any information can be considered a resource
+	- REST leverages HTTP protocol and can support any content-type (JSON, XML..)
+	- REST pillars/ principles/ constraints
+		- client-server architecture: front end and the back end are two separate applications interacting over a network
+		- statelessness: server does not track user states
+		- cacheability: particular responses from the backend can be cached for easy reuse
+		- layered system: application may use a layered architecture however layers are only aware of the next one in line
+		- uniform interface:
+			- patterns for requests/responses
+			- URI(uniform resource identifier): used to identify a particular resource:
+				- [address of application]/[collection]/[identifier]
+			- self-descriptive messages: using HTTP verbs and URI to describe the desired behavior
+			- HATEOAS: Hypermedia As The Engine Of Application State
+				- hypermedia links in the response content to navigate
+		- (Optional) code on demand
+			- backend can provide code/scripts to offer additional functionality to the front end
+
+Webservice
+	- any software that allow for the exchange of information over a network
+		- exposed via a consumable API
+
+Service Oriented Architecture(SOA)
+	- Concept of breaking up applications into discrete units of functionality
+		- results in modular applications
+	- black-box implementation
+		- you don't know how the service was implemented
+
+ORM
+	- Object-Relational Mapping
+		- converting between incompatible types of objects and database tables
+
+JPA
+	- Java Persistence API
+	- Interfaces meant for mapping/managing relational data with Java Objects
+	- "concept" rather than a tool
+		- describes which objects should be persisted why/how
+
+Hibernate
+	- ORM framework for Java
+	- can use annotations or xml files to sync java objects with a database
+	- Benefits
+		- Abstraction of JDBC
+			- uses JDBC under the hood
+			- Abstracts away SQL queries
+				- abstracts away SQL dialect (ie: PostgreSQL, OracleSQL...)
+			- reduces boiler plate code
+		- Caching
+			- can store query information in the server/ can be faster than JDBC
+		- leverages HQL (Hibernate Query Language)
+			- dialect specific to hibernate
+			- can still use native SQL if desired (bad practice) 
+
+	- hibernate.cfg.xml
+		- config file for hibernate
+			- hibernate configuration root tag
+			- session factory
+				- include db info (url, user, pw)
+				- hbm2ddl.auto
+					- CREATE - drops all existing tables and object with the names provided to your application and then recreate the schema
+					- UPDATE - doesn't delete anything, but adds to a schema if needed
+					- VALIDATE - makes sure that everything is there as expected
+					- NONE - hibernate doesn't do ddl
+					- etc...
+		- object mapping (either xml or annotation based)
+			- xml
+				- create file: EntityName.hbm.xml
+					- <hibernate-mapping>
+						<class name="com.revature.models.ClassName" table="entities">
+							<id name="entityId" column="entity_id"><generator class="increment"/></id>
+							<property name="entityProp" column="entity_prop"></property>
+						</class>
+					  </hibernate-mapping> 
+				- in hibernate.cfg.xml
+					- <mapping resource="EntityName.hbm.xml></mapping>
+			- annotation:
+				- <mapping class="com.revature.models.ClassName"></mapping>
+				- in the class, use JPA imported annotations in order to map a class
+					- @Entity: must go at the top of a class to be mapped to a table
+					- @Table: allows to name a table if different from the classname (@Table(name="entity_name"))
+	
+Class/Interfaces in Hibernate:
+
+	- Configuration (C)
+		- allows you to create session factories through config files/classes
+			- hibernate.cfg.xml
+	- SessionFactory (I)
+		- singleton in charge of creating session objects using a factory design pattern
+	- Session (I)
+		- represents database connection
+	- Transaction (I)
+		- manage ACID compliant transactions
+		- from session object
+			- .beginTransaction()
+				- commit();
+				- rollaback();
+	- Query (I)
+		- used to write complex CRUD operations using HQL
+	- Criteria (I)
+		- used to programatically write complex SQL statements
+
+Lazy loading vs Eager fetching
+	- when fetched eagerly, the entire object is retrieved as soon as the "parent" object is retrieved
+	- when fetched lazily, a proxy is retrieved until that object is used in the session
+		- proxy: a dummy/empty object aside from its unique indentifier 
+
+DAO/CRUD methods
+	- .get() vs .load()
+		- get:
+			- eager fetching
+			- return null when getting an id not in the db
+		- load
+			- lazily fetches an object
+			- throw an exception if it doesn't exist in the database
+	- .update() vs merge()
+		- update:
+			- void return
+			- if trying to updat an object with no id in db, throws an exception
+			- if a persistent object in the same session has the same id, throws an exception
+		- merge:
+			- returns the merged object
+			- if a persistent object in the same session has the same id, merges with the persistent object
+	- .save() vs .persist()
+		- save
+			- returns object with serializable id
+		- persist
+			- void
+
+
+- Hibernate
+	- Map Pokemon Class
+	- create an implement Pokemon DAO
+		- try using load, merge, persist

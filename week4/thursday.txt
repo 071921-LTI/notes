@@ -1,0 +1,44 @@
+AWS
+	- Amazon Web Services
+	- Offers cloud solutions to customer needs
+	- Why/What is the cloud?
+		- cost-saving
+			- not having to manage servers on-premise
+				- staff
+				- maintaining, upgrading...
+		- Infrastructure
+		- Scalability
+			- Auto-scaling
+				- "Pay for what you use"
+		- Durability
+	- Regions and Availability zones
+		- Regions
+			- groupings of AWS zones worldwide
+		- Availability zones
+			- datacenters containing the infrastructure
+ 	
+	- Cloud computing models
+		- models in which cloud services can be provided
+			- https://www.cloudflare.com/learning/serverless/glossary/platform-as-a-service-paas/
+		- IaaS
+			- Infrastructure as a Service
+			- user needs to provice and manage: Application, Data, Runtime...
+		- PaaS
+			- Platform as a Service
+			- user would need to provide: Application, data
+		- SaaS
+			- Software as a Service
+			- everythin is abstracted away from you
+				- ie: gmail
+	Services
+		- S3
+		- RDS
+		- EC2
+			- AMI
+			- EBS
+			- Security Groups
+
+For this morning: 
+	- Review these terms
+	- Show off one thing (from p1, from... as long as related to training)
+	- push all to mickey-mouse

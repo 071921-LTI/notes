@@ -37,6 +37,20 @@ Maven (review)
 				- deploy
 		- site - project documentation
 
-
+Jenkins
+	- Open-sourced automation server, build automation tool
+		- can automate CI/CD/CD processes
+	- Can leverage plugins in order to achieve additional functionality
+		- ie: notifications for passing/failing builds
+	- Jenkins job
+		- project managed by Jenkins, set of repeatable steps automated by Jenkins
+			- ie: pulling code from Github, package it, then deploy to Tomcat
+			- Build trigger: defines when the job would run/be executed
+		- Build status:
+			- green: success
+			- yellow: unstable
+			- red: failure
+		- Weather forcast
+			- how often the build fails lately
 
 

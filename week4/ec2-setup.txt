@@ -1,0 +1,38 @@
+From a terminal:
+ssh -i [path]/[to]/[pemfile] ec2-user@[your-ec2-dns.amazonaws.com]
+
+/home/ec2-user is where you are
+
+
+====== EC2 SETUP ===========
+
+sudo yum install java-1.8.0-openjdk-devel -y
+sudo yum install maven -y
+sudo yum install git -y
+sudo amazon-linux-extras install tomcat8.5 -y
+	- Install java, maven, git, and Tomcat
+
+cd /etc/tomcat/
+
+
+sudo sed -i 's/<Connector port=\"8080\"/<Connector port=\"8085\"/' /etc/tomcat/server.xml
+	- changes the Tomcat port from 8080 to 8085
+
+sudo service tomcat restart 
+	- restarts Tomcat for changes to apply
+	- Tomcat should now be accessible at your-ec2-dns.amazonaws.com:8085
+
+sudo git clone <-project->
+cd <project>
+sudo mvn package
+	- Retrieves a repository and builds an artifact using Maven
+	- The artifact created should be in the target folder of your project
+	- This command can only be ran at the pom.xml level of your file structure
+
+sudo cp target/YourProject-0.0.1-SNAPSHOT.war /var/lib/tomcat/webapps/
+	- war file is copied to tomcat webapps folder to deploy
+	- You project should be running at your-ec2-dns.amazonaws.com:8085/YourProject
+		- if <finalName> has been set up properly, otherwise you'll have to include "snapshot..."
+
+
+

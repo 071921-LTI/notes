@@ -1,0 +1,42 @@
+DevOps
+	- is a set of practices that combines software development with IT operations
+	- goal is to product "high quality code" more efficiently
+	- Often associated with Agile
+	- build, test, deploy, maintain software
+	- DevOps pipelines
+		- sets of automated processes and tools that allow developers and operations to collaborate on building and deploying code to a production environment
+
+DevOps Practices
+	- CI
+		- Continuous Integration
+			- practice of constantly merging source code, often to a centralized location/repository
+				- meant to prevent large errors from accumulating
+				- make sure that people are working with the latest codebase
+	- CD
+		- Continuous Delivery
+			- Constantly having the application/software in a state to be released "at the push of a button"
+				- Staging environment
+	- CD
+		- Continuous Deployment
+			- Code is integrated and if it passes the tests it's sent to the production environment
+				- live environment
+
+Maven (review)
+	- Build automation tool and dependency management tool
+		- dependencies are downloaded locally in the .m2 folder
+	- Lifecycle
+		- clean - removes old artifacts, aka deletes the target folder
+		- default
+			- broken down in different phases
+				- validate
+				- compile
+				- test
+				- package
+				- verify
+				- install
+				- deploy
+		- site - project documentation
+
+
+
+

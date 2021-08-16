@@ -5,6 +5,12 @@ QC survey link(Monday): [here](https://docs.google.com/forms/d/e/1FAIpQLSctgsH-_
 
 ---
 
+08/17
+- 1pm ET - QC Cumulative
+    - Week 2 and up
+
+---
+
 08/11
 - LTI sync-up (9am-9:30am)
     - in groups present a feature and push notes to mickey-mouse

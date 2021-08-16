@@ -1,0 +1,62 @@
+=====================JENKINS SETUP=====================
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import http://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo yum install -y jenkins
+
+
+sudo usermod -aG jenkins jenkins
+	- add jenkins to the group
+
+sudo chgrp jenkins /var/lib/tomcat/webapps
+	- Change the group of the webapps folder so that jenkins has access
+
+sudo service jenkins start
+	- Setting up jenkins
+
+
+-------------------------------------------------------
+Jenkins is now accessible on port :8080
+Go to:your-ec2-dns.amazonaws.com:8080
+Jenkins' initial password can be retrieved from the EC2 using: 
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+--> login using master password
+--> install recommended plugins
+--> setup admin user
+
+------- Create Job -------
+
+--> new item 
+--> [enter name] 
+--> Freestyle Project
+--> Select Git under Source Code Management
+	- Make sure that your repository is public, might lead to some issues if private
+--> enter repository url
+	- Don't forget .git at the end
+--> Branches to build
+	- main (or whichever branch you'd like)
+--> Select GitHub hook trigger for GITScm polling
+	- Enables webhooks from GitHub
+		- Go to your repo
+		- Settings
+		- Webhooks
+		- Add Webhooks
+			- Payload url
+				- [ec2-address]:8080/github-webhook/
+			- make sure to add "/" at the end other Jenkins might be unhappy
+			- Add webhook
+	- Edit your EC2 Security group to allow inbounds from Github (addresses can be found here: api.github.com/meta)
+		- 192.30.252.0/22
+		- 185.199.108.0/22
+		- 140.82.112.0/20
+--> Add a build step
+	- Execute shell
+		- enter:
+			mvn clean package
+			rm -f /var/lib/tomcat/webapps/[your-app].war
+			mv target/[your-app].war /var/lib/tomcat/webapps
+		
+Save, run the build, then view the console output notice maven package success.
+
+If set up properly any pushes to the branch defined should trigger a build

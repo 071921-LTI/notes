@@ -1,0 +1,10 @@
+<h3>Databinding</h3>
+
+<p>Displaying the someText variable: <b><em>{{someText}}</em></b></p>
+<input [(ngModel)]='someText' />
+<br>
+<hr>
+<br>
+<p>This count is currently:</p>
+<h6 [class]='countColor'>{{count}}</h6>
+<button (click)='increment()'>Increment!</button>

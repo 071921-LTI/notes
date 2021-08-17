@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+    padding: 1.5%;
+    margin: 0%;
+    background-image: linear-gradient(45deg, black 0%, white 50% ,black 100%);
+    min-height: 100%
+}
+
+body{
+    margin: auto;
+    padding: 2%px;
+    width: 720px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 1% 1% 1% 1%;
+}

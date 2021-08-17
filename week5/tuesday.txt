@@ -70,11 +70,41 @@ Angular
 			- template
 			- style
 
+	- Routing
+		- allows us to swap components dynamically based on the url-path
+		- routing module
+			- contains pre-defined "routes"
+		- <router-outlet></router-outlet>
+			- displays components mapped to a path
+		- Do not use href, will reload the page
+	- Adding Bootstrap
+		- npm install bootstrap
+		- add "node_modules/bootstrap/dist/css/bootstrap.min.css" to style in angular.json
+	- Databinding
+		- way to communicate between the HTML/DOM and the "typescript"
+		- One way databinding
+			- String interpolation
+				- displays data to the view
+				- from ts -> html
+				- name:string = 'Kevin'; in ts
+				- {{name}} in html to display
+			- eventbinding
+				- assign functionality to an event
+				- from HTML to ts
+				- doSomething() {...} in Ts
+				- <someTag (event)='doSomething()'></...>
+			- attribute/property binding
+				- assigns a value to an attribute/property of an HTML element
+				- from TS to HTML
+				- someProp:string = 'some';
+				- <someTag [attribute/property='someProp'></...> 
+		- 2 way databinding
+			- both ways from HTML to TS and back
+			- import FormModule in the app.module
+			- name:string = 'Kevin'; in ts
+			- <input [(ngModel)]='name' /> in html
 
 Making API calls
 	- POST/GET...
-Routing (navigating between views/components)
-Style
-	- Adding bootstrap
 DOM manipulation
 Events

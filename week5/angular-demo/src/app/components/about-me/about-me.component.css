@@ -1,0 +1,13 @@
+p{
+    text-indent: 1em;
+}
+figure{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#myPict{
+    border: 2px solid black;
+    border-radius: 2%;
+}

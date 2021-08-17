@@ -1,0 +1,80 @@
+Angular
+	- front-end framework
+	- used to make dynamic, single page applications
+		- SPA - Single Page Application
+			- Design Pattern
+			- load all of the static resources at once
+				- inject/remove views and functionality on a webpage rather than requesting a whole new one
+					- components
+						- basic building block of Angular
+		- Dependency injection
+			- Design Pattern
+			- Relying on a framework to provide the instances of dependencies rather than creating them ourselves
+			- Abstracts away implementation details
+	- Angular.js vs Angular
+		- Angular.js
+			- written in js
+		- Angular
+			- any version after Angular.js
+			- use ts
+	- Powerful CLI (Command line interface)
+		- ng new [app-name]
+		- ng serve
+			- "serve" our project locally, on port 4200
+			- -- open (open the browser automatically)
+		- ng test
+			- runs protractor and jasmine tests (spec.ts)
+		- ng build
+			- builds/packages the application as an artifact to be deployed
+			- Webpack
+				- resource bundler which prepares the application during development/builds
+					- bundle is a file that incorporates files that belong together
+						- served to the client in one single file request
+		- ng generate [component, service, module..] [name]
+			- ng g [c, s..] name
+	- Project setup
+		- angular.json
+			- angular settings
+		- tsconfig.json
+			- typescript settings (ie: transpiling target)
+	- Module
+		- group of related components
+		- at least 1 module
+			- by default AppModule, which is the root module
+				- convention, can be renamed if desired
+		- @NgModule decorator
+			- defines 4 properties
+				- declarations - associated components
+				- imports - additional modules
+				- providers - defines services associated with the module
+				- bootstrap - root component for the module
+	- Decorators
+		- "fancy functions" that provide metadata as parameter
+		- Types
+			- class, method, property, parameter
+		- In Angular, each "element" has their own decorator
+			- @Component
+			- @NgModule
+			- @Injectable for services
+			- @Pipe for pipe
+	- Components
+		- Building block of Angular, used to design the webpages
+			- a webpage is built by combining components together
+		- when generated, a component is comprised of 4 files
+			- html
+			- css
+			- ts - functionality
+			- spec.ts - unit testing
+		- @Component decorator
+			- selector
+			- template
+			- style
+
+
+Making API calls
+	- POST/GET...
+Routing (navigating between views/components)
+Style
+	- Adding bootstrap
+DOM manipulation
+Events

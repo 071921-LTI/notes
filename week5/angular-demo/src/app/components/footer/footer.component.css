@@ -1,0 +1,9 @@
+footer{
+    background-color: gray;
+    padding: 1%;
+    text-align: right;
+}
+
+footer span{
+    color: white;
+}

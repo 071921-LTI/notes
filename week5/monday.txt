@@ -1,0 +1,62 @@
+Node.js
+	- open-sourve, cross-platform JavaScript runtime environment
+		- executes JS code outside of the browser
+	- use JS for each tier of a web application
+	
+
+Node Package Manager (npm)
+	- included with the installation of node.js
+	- One of the world's largest software registry
+		-  free to use
+	- 3 main components
+		- website: discover packages... navigate...
+		- CLI tool (npm): run from a terminal
+		- registry: database of JS software available for download
+	- npm init
+		- initializes a new JS project
+			- generates package.json file
+				- like pom.xml
+				- lists dependencies used
+				- project info
+					- entry point... 
+	- node_modules
+		- when npm install is ran, downloads all required dependencies in that folder
+		- good practice to add the node_modules folder to a gitifnore
+			- otherwise all the dependencies are pushed to github
+		- managed by npm
+		- can uninstall using npm uninstall
+	- package-lock.json
+		- specifies the exact version of the dependencies and required subdependencies so that the project is 100% reproducible
+	
+TypeScript
+	- made by Microsoft
+	- superset of JS
+		- all JS is valid TS
+			- anything you can do in JS, you can do in TS
+	- features
+		- static typing
+		- compile/transpile time check
+		- interfaces
+		- access modifiers
+	- more Object Oriented JS
+	- Cannot be ran in a browser
+		- has to be transpiled to JS
+	- types
+		- all of JS types
+		- TS specific types
+			- any
+			- void
+			- never
+			- enums
+			- tuple
+	- access mods
+		- public is by default, private, protect..
+	- non-access mods
+		- readonly
+	- interfaces
+		- we're going to use those for type checking
+	- tsc
+		- command used to transpile .ts files to .js files
+		- by default it uses < ES5
+		- specify the version using --target flag
+			- tsc --target es6 index.ts

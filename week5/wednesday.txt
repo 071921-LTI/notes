@@ -1,0 +1,53 @@
+Directives
+	- Component
+		- HTML tag to refer to a component
+		- <app-someComp></app-someComp>
+	- Structural
+		- directive used to interact with the DOM
+			- creating elements, displaying elements...
+		- *ngIf, *ngFor...
+	- Attribute
+		- directive used to change the looks or behavior of DOM elements/ components
+		- Can generate directives
+			- @Directive decorator
+		- ngStyle, ngClass
+	- Pipes
+		- used to transform/display data in the view
+			- don't actually change the data itself
+			- ie: uppercase/lowercase
+			- time/date formatting
+			- currency
+		- used in conjection with String Interpolation {{ value | pipeName }}
+		- custom pipes
+			- ng g p pipename
+				- implements PipeTransform
+				- transform()
+					- where behavior is specified
+	- models
+		- classes/interfaces for data/objects to be received
+			- for this example, using interface since we're not instantiating any pokemon
+		- not required, just helps with working with JSON data
+	- services
+		- Angular "entities" used to reuse code/logic that could be reusable
+			- ie: making an API call
+		- services are injected into other classes
+			- via the constructor
+			- Angular leverages Dependency injection
+				- different types of injectors
+					- root: service is a singleton/one per application
+					- module: service is reused within a module
+					- component: service is reused per component
+		- @Injectable decorator
+	- Http Calls
+		- Import HttpClientModule in the app.module
+		- HttpClient, to make HttpRequests
+		- returns an observable
+			- stream of data returned from async http call
+			- follows publisher/subscriber model/design pattern
+				- any entity "subscribed" to the observable can retrieve the information
+				- lazy, the call is only made is the observable is subscribed to
+		- .pipe - allows us to return an observable
+		- .map - allows to "map" a JSON object to an interface 
+	- Event emitters
+		- used to emit custom event synchronously or async
+		- used to send data from parent to child

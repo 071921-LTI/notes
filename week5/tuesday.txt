@@ -107,4 +107,3 @@ Angular
 Making API calls
 	- POST/GET...
 DOM manipulation
-Events

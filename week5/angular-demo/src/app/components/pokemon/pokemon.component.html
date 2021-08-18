@@ -1,0 +1,12 @@
+<hr>
+<ng-container *ngIf='pokemon; else noPokemon'>
+<div>
+        <h4>{{pokemon.id}}: {{pokemon.name | uppercase}}</h4>
+        <ng-container *ngFor = 'let sprite of pokemon.sprites | keyvalue'>
+            <img *ngIf="sprite.value && sprite.key !== 'other' && sprite.key !== 'versions' " [src]='sprite.value'>
+        </ng-container>
+</div>
+</ng-container>
+<ng-template #noPokemon>
+    No pokemon available.
+</ng-template>

@@ -1,0 +1,36 @@
+Jasmine
+	- BDD (Behavior-Driven development) unit testing framework
+		- subset of TDD
+			- test cases are written in a way to specify the desired behavior
+	- it should be described in a highlevel language, almost like English
+	- built-in Angular
+	- Main keywords/Setup
+		- describe
+			- describes the name/description of a test suite (what is tested)
+		- it
+			- describes the desired functionality
+		- expects
+			- equivalent to assert in JUnit
+		- can have things like BeforeEach, BeforeAll, AfterEach..
+
+Karma
+	- Webserver/Testrunner
+		- configured in the Karma.conf.js
+	- looks for .spec.ts files to run the tests and display the results in a browser
+
+Automated testing
+	- Unit testing
+		- "testing the unit"
+	- e2e testing
+		- testing that the application works as a whole
+	- integration testing
+		- testing that "units" work together as intended
+
+Mocking
+	- types of mock
+		- dummy
+		- stub
+			- can control the behavior of mocked object
+		- spy
+			- can control the behavior of mocked object
+			- can also check which behavior is called on that mocked object

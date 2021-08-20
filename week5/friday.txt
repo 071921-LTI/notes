@@ -1,0 +1,97 @@
+SDLC - Software Development Life Cycle
+	- Process of planning, creating, testing, and displaying an information system
+	- General phases/ steps:
+		- Requirement phase
+			- Existing system is evaluated and defiencies are identified
+			- done by BAs (Business Analysts)
+				- meetings with clients, eliting requirements
+		- Analysis phase
+			- Requirements are defined
+				- particularly deficiencies in the existing system and a proposal is made
+				- Senior/Architect and BAs
+		- Design phase
+			- Proposed system is designed and product features are planned out
+			- no coding
+		- Development phase
+			- Sofware is built
+			- Code is written
+		- Testing phase
+			- Software is tested to ensure desired functionality
+			- testing team
+		- Deployment/Maintenance phase(s)
+			- Product is delivered and deployed to the customer
+			- maintenance is kept up
+
+Waterfall model
+	- traditional model, linear/sequential cycle
+	- each phase must be completed before the next phase begins/no overlapping
+	- inflexible aka no going back up
+	- Advantages
+		- requirements are well defined/documented
+		- well defined timeline, stable product definition
+		- best for small scale project
+	- Disadvantages
+		- Cannot accomodate well with stakeholder feedback
+		- no working software until later in the lifecycle
+		- poor model for long-ongoing project
+
+Agile model
+	- Approach to SDLC based on iterative and incremental development with focus on customer satifaction by rapid delivery of software product
+	- Breaks down the product into small incremental builds, provided in iterations, each iteration involving cross functional teams working simultaneously
+	- a philosophy/mindset:
+		- Individuals and interactions over processes and tools
+		- Working software over comprehensive documentation
+		- Customer collaboration over contract negotiation
+		- Responding to change over following a plan
+
+Terminology
+	- User story
+		- individual feature/requirement for a project
+	- Epic
+		- group of related features broken down in user stories
+	- Story point
+		- level of difficulty assigned to a user story - can be based on perceived time to be spent on it
+	- Sprint
+		- Specified timeline for an iteration (2weeks to a month)
+
+Scrum
+	- Agile framework/ implementation of Agile
+	- Artifacts(documents)
+		- Product backlog
+			- List of everything that is known to be needed in the product/ list of requirements / features
+			- Managed the product owner
+		- Sprint backlog
+			- Set of product backlog items selected for a sprint
+	- Scrum team
+		- usually 5 to 9 members
+		- Product Owner
+			- responsible for the product resulting from the dev team
+			- manages the product backlog
+		- Development team
+			- devs/qas
+		- Scrum Master
+			- Facilitator to the scrum dev team
+			- clarifies questions, organizes activities
+	- Ceremonies (meetings)
+		- https://h3z6m7w4.rocketcdn.me/wp-content/uploads/2020/06/Scrum-process-schema-EN-small.png
+		- Sprint Planning
+			- Meeting to plan the work to be performed during a sprint
+			- collaboration of the whole Scrum team
+				- Assigning features/story pointing
+			- ~ 2 hours per week of the sprint
+		- Daily Scrum (Daily Standups)
+			- Daily meeting for the dev team
+			- purpose: to check on the progress
+				- "what did you do yesterday?"
+				- "what are you doing today?"
+				- "Do you have any blockers?"
+					- work relying on someone else's
+			- ~15 minutes 
+		- Sprint Review
+			- Demo of the product resulting from the sprint, "working software"
+			- Scrum team and stakeholders collaborate/inspect what was done and update the product backlog as needed
+		- Spring Retrospective
+			- Scrum team reviews how the sprint went, create a plan for improvement for the next sprint
+		- Burndown chart
+			- Graph displaying progress over the course of a sprint
+			- Story points remaining vs time

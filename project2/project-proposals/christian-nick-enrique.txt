@@ -21,6 +21,7 @@ User Stories:
         6. A customer can view books by author
         7. A customer can search books by title
         8. A customer can request a book be added to store (if time!)
+        9. A customer can create a wishlist of books they want to purchase
 
     - Employee User Stories
         1. An employee can login

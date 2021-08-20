@@ -1,0 +1,34 @@
+Team Name: Call Weather and Traffic (CWT) 
+Team Lead:Sergio
+
+Project proposal: Traffic and Weather Forecast App 
+
+ 
+
+Description: Traffic and weather application can allow a user to plan out their trip to a given destination. The app can store previous trips for each user. The app can also generate a forecast according to the planned route.  
+
+ 
+
+User Stories: 
+
+The user will be able to Log in and Log out 
+
+The user will be able to View their trip history 
+
+The user will be able to Plan a trip 
+
+The user will be able to plan multiple stops in their trip. 
+
+The system will Show the route and Estimated Time of Arrival 
+
+The system will Show the weather on given zip code 
+
+The admin will be able to Manage users  
+
+The admin will be able to View all users 
+
+The admin will be able to View all of a user’s history (admin) 
+
+The admin will be able to Delete history of a user.  
+
+The System will automatically delete Histories that are a month old. 

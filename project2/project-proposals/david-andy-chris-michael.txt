@@ -1,0 +1,34 @@
+David, Andy, Chris, Michael
+
+Team Lead: David
+Gitflow: Chris
+
+Project Name: TRiPLNR
+
+Trip Planning App User Stories
+-A user can sign up for an account
+-A user can login
+-A user can create a trip
+-A user can add friends
+-A trip manager can add friends to the trip
+-A trip manager can edit the trip schedule
+	-trip dates
+	-trip locations
+		-rest stops
+-A trip manager can remove friends from a trip
+-A trip manager can designate roles (driver, snacks, etc)
+-A passenger can receieve a role for a trip
+-A user can view current and past trips
+-A user can add expenses to a trip
+-A trip manager can view the trip route
+-A user can logout
+-A trip manager can view the trip management page
+-A trip passenger can view the trip passenger page
+-A user can view the dashboard
+
+Stretch
+-A user can add pictures to the trip
+-A trip manager can create a trip fund
+-A user can request a bathroom break
+-A user can create a roadtrip playlist
+-facebook

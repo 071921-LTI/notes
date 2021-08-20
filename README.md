@@ -5,6 +5,22 @@ QC survey link(Monday): [here](https://docs.google.com/forms/d/e/1FAIpQLSctgsH-_
 
 ---
 
+09/07
+- Project 2 presentations 
+
+---
+
+08/25
+- 2pm ET - Kevin Meeting
+
+---
+
+08/24
+- 1pm ET - QC (Angular, SDLC)
+- 4pm ET - Kevin Meeting
+
+---
+
 08/17
 - 1pm ET - QC Cumulative
     - Week 2 and up

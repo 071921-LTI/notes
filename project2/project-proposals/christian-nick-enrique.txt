@@ -1,0 +1,33 @@
+Project 2 Proposal
+
+Team Name: Book Bros.
+
+Project idea: Online Bookstore
+API: Open Library API https://openlibrary.org/developers/api
+
+Lead: Christian
+Git-Flow Manager: Enrique
+
+Topic Proposal: An online bookshop where the owner can query an online book api to get information on books to then put for sale on the site.
+                Customers can them log on to the site to purchase books that are available in store.
+
+User Stories:
+    - Customer User Stories
+        1. A customer can login
+        2. A customer can register an account
+        3. A customer can view books for sale
+        4. A customer can view purchased books
+        5. A customer can purchase new books
+        6. A customer can view books by author
+        7. A customer can search books by title
+        8. A customer can request a book be added to store (if time!)
+
+    - Employee User Stories
+        1. An employee can login
+        2. An employee can register an account
+        3. An employee can query the API for books by author
+        4. An employee can query the API for books by title
+        5. An employee can add a book from the API to the book store
+        6. An employee can view books for sale
+        7. An employee can view recent purchases (if time!)
+        8. An employee can view book requests (if time!)

@@ -1,0 +1,89 @@
+Spring
+	- Framework which leverages Inversion of Control (IoC) and Dependency Injection (DI) in order to accelerate software development
+	- in general, "Spring" refers to the Spring Framework
+	- Spring modules
+		- different "features" within the Spring framework, usually address a specific concern within your application
+		- SpringCore (IoC Container)
+		- SpringBeans
+		- SpringContext
+		- SpringWebMVC
+		- SpringAOP
+		- SpringORM
+	- Spring projects
+		- address different industry concerns (ie: Security, MSA, rapid development... )
+		- SpringSecurity
+		- SpringCloud
+		- SpringBoot
+		- SpringData...
+	- IoC Container
+		- Spring container
+		- responsible for instantiating dependencies and providing them our code
+	- Spring bean
+		- any java entity managed by the IoC container
+		- the are managed and provided their dependencies by Spring
+	- Dependency injection (DP)
+		- "dependency"
+			- object/entity needed for our code to function properly
+		- "injection"
+			- framework provides the instances of these objects for us
+		- decoupling
+
+IoC container
+	- "inversion of control" - Spring manages the lifecycle of your beans
+	- once the beans and dependencies are specified, the IoC container manages them
+		- creates the bean (don't have to use the new keyword)
+		- handles dependency injection (if needed by another bean)
+	- represented by the BeanFactory(BF) and the ApplicationContext(AC)
+		- uses the factory design pattern in order to create beans
+		- BF is the older version of the IoC container, AC is the newer version
+			- BF has lazy instantiation, AC has eager instantation
+	- Some important AC implementations
+		- ClassPathXMLApplicationContext
+		- AnnotationConfigApplicationContext
+		- WebApplicationContext
+
+Dependency Injection
+	- IoC container finds the appropriate bean for a dependency and injects it
+	- 4 different types of DI, Spring only supports 3:
+		- Constructor injection - Dependency is placed/injected by calling an overloaded constructor
+			- also used by Angular
+		- Setter injection - Dependency is placed/injected by calling the setter method
+		- Field injection - dependecy is placed/injected directly in the field using the Reflection API
+		- Interface injection - not supported by Spring
+
+Bean definition in XML:
+	- root tag of xml file should be "beans"
+		- file passed into the application context
+	- example mapping:
+		- <bean name="car" class="com.revature.models.Car"></bean>
+	- can add static values/default values using property tags
+		- <property name="id" value="1"></property>
+	- map to other beans		
+		- <property name="car" ref="car"></property>
+
+Scope of a bean:
+	- Singleton: only one of this bean is created, all request for this bean get the same one
+	- Prototype: Everytime a bean is requested, a new instance is created
+	- Request: web-only, a new bean is created per HTTP request
+	- Session: web-only, a new bean is created per HTTP session
+	- Global: web-only, a new bean is created per global HTTP session
+	- can be defined in the beans.xml
+
+Bean wiring
+	- refers to establishing dependencies between Spring beans (that can be defined in the xml file)
+	- @Autowired/Or autowire="" in the xml file
+		- used to tell spring that an object is a dependency
+		- byName/byType
+		- automagically
+
+Stereotype annotations
+	- Annotations used for beans that the IoC container should manage
+	- 4 main types of stereotype annotation
+		- @Component - standard, managed bean. Other annotations include this implicitely
+		- @Service - denotes a service
+		- @Controller - denotes a controller to be registered with SpringWeb to handle requests and responses
+		- @Repository - denotes a repository, bean used to retrieve data from a database (daos)
+
+@Bean
+	- Annotation over a method to specify that the returned object should be managed by the IoC container
+		- good for objects that have a class that we didn't write

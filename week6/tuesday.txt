@@ -1,0 +1,57 @@
+Lombok
+	- Code generation tool
+		- @Setter
+		- @Getter
+		- ...
+		- @Data to include setter/getter/constructor/hashcode&equals...
+	- Setting up lombok with your ide
+		- navigate to ~/.m2/repository(ies)/org/projectlombok/lombok/[version]
+		- java -jar lombok-[version].jar
+		- navigate to your ide location and select the executable
+		- click install/update
+
+Spring Web MVC
+	- Spring module
+		- from Spring Web
+	- Allows to handle HTTP requests for Spring applications
+	- Abstracted away
+		- uses a Front Controller design pattern
+		- only requires implementation of controller methods and mapping to requests
+		- define the dispatcher servlet
+	- Controllers
+		- have methods used to handle requests for a particular path/HTTP method
+		- methods can return:
+			- Data(ie: JSON) in the response body
+			- Views/static resources
+	- Flow of a request
+		- Client makes a request
+		- received by Tomcat
+		- checks the web.xml
+		- routes to FC (Dispatcher Servlet)
+		- checks RH
+		- controllers/ View resolver(if static webpage is requested)
+MVC Annotations
+	- @Controller
+		- used to annotate a controller class
+		- can be leveraged alongside @RequestMapping to specify a common path for controller methods
+		- used to handle HTTP requests
+	- @RestController
+		- implicitely adds @ResponseBody to all of the handle methods
+	- @RequestMapping(HttpMethod, mapping)
+		- used to specify the HTTP verb and the path for a method to handle
+		- by default, methods go through the ViewResolver unless @ResponseBody is specified
+	- @GetMapping/PostMapping...
+		- specifies the HTTP verb for a method (implicitely @RequestMapping(forXMethod))
+		- can retrieve information from request
+			- @PathVariable
+				- used to retrieve a variable in the url (users/{id})
+			- @RequestParam
+				- used to retrieve query params (user?property=value)
+			- @RequestBody
+				- used to map object implicitely, ie: converts JSON object to java object
+			- @ResponseStatus
+				- using ResponseEntity gives more control
+Global exception Handling
+	- allows to handle exception occuring in the server and returning the appropriate status code 
+	- annotate a class with @ControllerAdvice
+	- annotate methods with @ExceptionHandler(exceptionName.class) and @ResponseStatus([status], ?reason)

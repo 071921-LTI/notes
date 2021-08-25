@@ -10,7 +10,6 @@ import com.revature.models.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer>{
 
-//	@Transactional(isolation=Isolation.SERIALIZABLE, rollbackFor=Exception.class)
 	User findUserByUsername(String username);
 	
 //	@Query("Select u from User u WHERE .... ")

@@ -4,9 +4,9 @@ server:
 #Database credentials
 spring:
   datasource:
-    url: jdbc:postgresql://database-2.cllvqmegtmuc.us-east-1.rds.amazonaws.com:5432/postgres
-    username: postgres
-    password: p4ssw0rd
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASS}
     driver-class-name: org.postgresql.Driver
   jpa:
     show-sql: true
@@ -16,3 +16,10 @@ spring:
   jackson:
     serialization:
       fail-on-empty-beans: false
+
+# Displays all actuator endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -22,15 +22,18 @@ public class UserService {
 		this.ur = ur;
 	}
 	
+	@Transactional(readOnly=true)
 	public User getUserById(int id) {
 //		return ur.getById(id);
 		return ur.findById(id).get();
 	}
 	
+	@Transactional
 	public User getUserByUsername(String username) {
 		return ur.findUserByUsername(username);
 	}
 	
+	@Transactional
 	public int createUser(User u) {
 		u.setRole(UserRole.BASIC_USER);
 		u.setRegisterDateTime(LocalDateTime.now());

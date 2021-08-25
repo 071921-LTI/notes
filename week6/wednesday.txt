@@ -20,6 +20,23 @@ Spring Boot
 				- @EnableAutoConfiguration
 				- @ComponentScan
 		- In main method, call: SpringApplication.run([ApplicationName].class, args);
+	- DevTools
+		- set of tools to ease application development
+			- automatic server restart
+			- live reloading of the ApplicationContext
+			- & more...
+	- Actuator
+		- production-ready features to the application
+			- metrics (traffic, state of app)
+			- bean info
+			- health checks
+			- ...
+		- in application.yml:  
+		management:
+ 			 endpoints:
+  				web:
+     				 exposure:
+       					 include: "*"
 
 Spring Data
 	- Spring Project used to handle data persistence
@@ -73,4 +90,27 @@ Validating incoming http request using bean validation
 			- @Positive/Negative..
 			- @Pattern(regexp = "")
 				- for regular expressions
-		- use in conjunction with @Valid
+	- used in conjunction to @valid to annotate @RequestBody parameters
+		- Spring validates that the request body follows the constraints placed on the class
+
+SwaggerUI
+	- API Documentation tool
+		- integrates seemlessly with SpringBoot
+	- set up:
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+	- In driver class:
+
+	@Bean
+	public Docket api() {
+		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.any())
+				.paths(PathSelectors.any()).build();
+	}
+
+RestTemplate
+	- Spring's Traditional way to make HTTP calls
+		- WebClient is more recent
+			- async while RestTemplate is synchronous

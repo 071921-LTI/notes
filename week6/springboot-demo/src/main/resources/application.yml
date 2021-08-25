@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+#Database credentials
+spring:
+  datasource:
+    url: jdbc:postgresql://database-2.cllvqmegtmuc.us-east-1.rds.amazonaws.com:5432/postgres
+    username: postgres
+    password: p4ssw0rd
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  jackson:
+    serialization:
+      fail-on-empty-beans: false

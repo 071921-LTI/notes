@@ -1,0 +1,76 @@
+Spring Boot
+	- makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".
+	- takes an opinionated view of the Spring platform and third-party libraries 
+		- need minimal Spring configuration.
+	- Can create a Spring boot project using the Spring initializr
+	- imbedded Tomcat server
+		- packaging: jar
+	- "Convention over configuration"
+		- reduce the number of configuration by assuming common conventions
+			- ie: Tomcat runs on port 8080
+		- no xml configuration
+			- can specify custom configuration in application.yml/properties
+				- ie: db credentials/overriding "convention"
+	Set up
+		- class with the main method should be in the parent package/base package
+			- otherwise component-scan may not find relevant beans
+		- @SpringBootApplication
+			- abstracts away
+				- @Configuration
+				- @EnableAutoConfiguration
+				- @ComponentScan
+		- In main method, call: SpringApplication.run([ApplicationName].class, args);
+
+Spring Data
+	- Spring Project used to handle data persistence
+	- Spring Data JPA
+		- "a module" within that project(?) that provides standard implementations for common DAO methods
+			- ie: no longer need to implement them
+		- Built upon Spring ORM, which is built upon Hibernate, which is built upon JDBC
+		- Spring Data JPA hierarchy
+			- Repository
+			- CrudRepository
+			- PagingAndSortingRepository
+			- JpaRepository
+		- custom methods:
+			https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods
+		- can also write custom queries using @Query
+Transaction management
+	- not specific to Spring Data JPA
+	- indicates that a method should be handled in the context of a Spring handled transaction
+	- use @Transactional
+		- properties to be overriden:
+			- isolation
+				- specify isolation level
+			- rollbackFor
+				- specify when to rollback
+					- ie: when an exception is thrown
+			- propagation
+				- how nested transactions are handled
+	- @Transaction(propagation=Propagation.[value])
+		- REQUIRED
+			- executes in the current transaction and if one doesn't exist, creates one
+			- default behavior(?)
+		- NESTED
+			- executes in the current transaction, but separated by a savepoint
+		- REQUIRES_NEW
+			- creates a new transaction that commits/rollbacks independently from others
+		- MANDATORY
+			- must execute in an existing transaction or will throw an exception if none is open
+		- NEVER
+			- must execute non-transactionally, throws an exception if one is open
+		- SUPPORTED
+			- will execute in the scope of a transaction otherwise runs non-transactionally
+		- NOT_SUPPORTED
+			- executes non-transactionally no matter what
+
+Validating incoming http request using bean validation
+	- from javax.validation
+		- allows for the validation of content received by controller
+		- can annotate bean properties with constraints
+			- @NotNull
+			- @Min/Max..
+			- @Positive/Negative..
+			- @Pattern(regexp = "")
+				- for regular expressions
+		- use in conjunction with @Valid

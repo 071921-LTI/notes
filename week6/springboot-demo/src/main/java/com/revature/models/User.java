@@ -10,8 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -29,12 +27,11 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
-	@NotNull @NotBlank 
-	@Length(min=3)
+	@Length(min=3, message = "Username has to be longer than 3 characters.")
 	@Column(nullable=false, unique=true)
 	private String username;
 	
-	@Pattern(regexp=RegexUtil.PASSWORD_REGEX)
+	@Pattern(regexp=RegexUtil.PASSWORD_REGEX, message = "password has to be at least 4 characters and include a number.")
 	@Column(nullable=false)
 	private String password;
 	

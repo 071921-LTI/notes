@@ -15,4 +15,5 @@
 	<logger name="com.revature" level="DEBUG">
 		<appender-ref ref="FILE" />
 	</logger>
+	
 </configuration>

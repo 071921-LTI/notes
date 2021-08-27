@@ -10,6 +10,11 @@ QC survey link(Monday): [here](https://docs.google.com/forms/d/e/1FAIpQLSctgsH-_
 
 ---
 
+08/30
+- 10am ET - QC (Spring topics)
+
+---
+
 08/25
 - 2pm ET - Kevin Meeting
 

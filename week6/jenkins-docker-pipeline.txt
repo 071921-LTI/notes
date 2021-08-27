@@ -79,6 +79,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 --> FOR SENSITIVE INFORMATION
 	- Add secret text in Jenkins under credentials
+	- GLOBAL variables
 		- ie: DB credentials
 	
 Save, run the build, then view the console output notice maven package success.

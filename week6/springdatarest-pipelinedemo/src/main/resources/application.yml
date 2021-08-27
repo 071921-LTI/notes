@@ -1,0 +1,24 @@
+# Optional setting, 8080 by default
+server:
+  port: 8080 
+
+spring:
+  application:
+    name: springboot-demo
+  datasource:
+    url: ${DB_URL}
+    driver-className: org.postgresql.Driver
+    username: ${DB_USER}
+    password: ${DB_PASS}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+# Displays all actuator endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

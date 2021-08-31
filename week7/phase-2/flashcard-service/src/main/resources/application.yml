@@ -1,8 +1,8 @@
 server:
-  port: 8080
+  port: 8091
 spring:
   application:
-    name: quiz-service
+    name: flashcard
   datasource:
     password: password
     url: jdbc:h2:mem:memdb

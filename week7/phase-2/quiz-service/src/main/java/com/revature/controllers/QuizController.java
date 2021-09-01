@@ -31,6 +31,9 @@ public class QuizController {
 		return new RestTemplate();
 	}
 	
+	@Autowired
+	private RestTemplate restTemplate;
+	
 	@GetMapping
 	public ResponseEntity<List<Quiz>> findAll() {
 		List<Quiz> all = quizDao.findAll();
@@ -67,12 +70,20 @@ public class QuizController {
 	
 	@GetMapping("/cards")
 	public ResponseEntity<List<Flashcard>> getCards() {
-		List<Flashcard> all = this.restTemplate().getForObject("http://localhost:8080/flashcard", List.class);
+		List<Flashcard> all = this.restTemplate.getForObject("http://flashcard", List.class);
 		
 		if(all.isEmpty()) {
 			return ResponseEntity.noContent().build();
 		}
 		
 		return ResponseEntity.ok(all);
+	}
+	
+	@GetMapping("/cards/port")
+	public ResponseEntity<String> getPort() {
+		String info = this.restTemplate.getForObject("http://flashcard/port", String.class);
+		
+		
+		return ResponseEntity.ok(info);
 	}
 }

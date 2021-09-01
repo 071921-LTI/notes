@@ -1,0 +1,17 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: quiz
+  datasource:
+    password: password
+    url: jdbc:h2:mem:memdb
+    username: sa
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false

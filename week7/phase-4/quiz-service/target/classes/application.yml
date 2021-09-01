@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: quiz
+  cloud:
+   config:
+      discovery:
+        enabled: true
+        service-id: config

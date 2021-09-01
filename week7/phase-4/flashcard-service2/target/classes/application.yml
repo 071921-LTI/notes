@@ -1,0 +1,10 @@
+server:
+  port: 8092
+spring:
+  application:
+    name: flashcard
+  cloud:
+   config:
+      discovery:
+        enabled: true
+        service-id: config

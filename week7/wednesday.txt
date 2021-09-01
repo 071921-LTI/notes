@@ -1,0 +1,23 @@
+Feign client
+	- Declarative web service client, makes it easier to make a request to another webservice
+	- setup
+		- import openfeign dependency
+		- @EnableFeignClients (above Main method class)
+		- create interface with @FeignClient(name = service)
+		- list methods to be used
+
+Circuit Breaking
+	- Providing methods for failing gracefully in case a service is unavailable
+	- Circuit Breaker Design Pattern
+		- Closed - Works as intented
+		- Open - Service is unavailable, fallback is used
+		- Half-closed - Testing to see if service is back up
+	- Resilience4j
+		- import dependency
+		- define fallback method has to have argument of Exception e
+		- @CircuitBreaker(name="", fallbackMethod="")
+
+@Spring Cloud Config
+	- Configuration Server for Centralized configuration
+		- keeps track of all the configuration in a repository
+			- easy to maintain

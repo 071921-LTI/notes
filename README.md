@@ -6,7 +6,7 @@ QC survey link(Monday): [here](https://docs.google.com/forms/d/e/1FAIpQLSctgsH-_
 ---
 
 09/07
-- Project 2 presentations 
+- 12pm ET - Project 2 presentations 
 
 ---
 

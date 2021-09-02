@@ -1,6 +1,5 @@
 package com.revature.models;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -21,7 +20,7 @@ import lombok.ToString;
 public class Flashcard {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	private String question;
@@ -29,7 +28,7 @@ public class Flashcard {
 	private String name;
 	private Difficulty difficulty;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "topic_id")
 	private Topic topic;
 }

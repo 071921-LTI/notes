@@ -27,10 +27,6 @@ User Stories:
         1. An employee can login
         2. An employee can register an account
         3. An employee can query the API for books by author
-            - first use: /search/authors.json?q={userInput}
-            - next: let user select author from list
-                - get author key
-            - use: /authors/{authorKey}/works.json to get works by author
         4. An employee can query the API for books by title
             - use: /search.json?tile={userInput}
         5. An employee can add a book from the API to the book store
